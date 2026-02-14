@@ -1,10 +1,4 @@
 
-@import "tw-animate-css";
-
-@plugin "tailwindcss-animate";
-
-@custom-variant dark (&:is(.dark *));
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -68,6 +62,36 @@ html.dark {
 
 .container-neutral {
   background-color: rgba(var(--bg) / 0.9);
+}
+
+@layer utilities {
+  .container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+  @media (min-width: 640px) {
+    .container {
+      max-width: 640px;
+    }
+  }
+  @media (min-width: 768px) {
+    .container {
+      max-width: 768px;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container {
+      max-width: 1024px;
+    }
+  }
+  @media (min-width: 1280px) {
+    .container {
+      max-width: 1280px;
+    }
+  }
 }
 
 @theme inline {
