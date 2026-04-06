@@ -1,19 +1,6 @@
-export type ExperienceEntry = {
-  title: string;
-  org: string;
-  period: string;
-  situation: string;
-  task: string;
-  action: string[];
-  result: string;
-  stack?: string[];
-};
+import { ExperienceEntry } from '@/types/experience';
 
-export default function ExperienceList({
-  entries,
-}: {
-  entries: ExperienceEntry[];
-}) {
+export default function ExperienceList({ entries }: { entries: ExperienceEntry[] }) {
   return (
     <div className="space-y-12">
       {entries.map((e) => (
