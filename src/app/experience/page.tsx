@@ -1,3 +1,5 @@
+import ExperienceList from '@/components/ExperienceList';
+
 const experienceEntries = [
   {
     title: "Full-Stack Developer (Research Initiation Grant)",
@@ -43,60 +45,7 @@ export default function ExperiencePage() {
         </h1>
       </div>
 
-      <div className="space-y-12">
-        {experienceEntries.map((e) => (
-          <article
-            key={`${e.org}-${e.period}-${e.title}`}
-            className="relative rounded-lg border bg-card p-6 text-card-foreground shadow-sm"
-          >
-            <div className="flex items-start justify-between">
-              <div>
-                <div className="text-sm text-muted-foreground">{e.org}</div>
-                <h2 className="mt-1 text-xl font-semibold">{e.title}</h2>
-                <div className="mt-1 text-sm text-muted-foreground">
-                  {e.period}
-                </div>
-              </div>
-            </div>
-
-            <dl className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <div>
-                <dt className="text-xs font-medium text-muted-foreground">
-                  Situation
-                </dt>
-                <dd className="mt-1 text-sm text-foreground">{e.situation}</dd>
-              </div>
-
-              <div>
-                <dt className="text-xs font-medium text-muted-foreground">
-                  Task
-                </dt>
-                <dd className="mt-1 text-sm text-foreground">{e.task}</dd>
-              </div>
-
-              <div className="sm:col-span-2">
-                <dt className="text-xs font-medium text-muted-foreground">
-                  Action
-                </dt>
-                <dd className="mt-1 text-sm text-foreground">
-                  <ul className="list-disc list-inside space-y-2">
-                    {e.action.map((a) => (
-                      <li key={a}>{a}</li>
-                    ))}
-                  </ul>
-                </dd>
-              </div>
-
-              <div className="sm:col-span-2">
-                <dt className="text-xs font-medium text-muted-foreground">
-                  Result
-                </dt>
-                <dd className="mt-1 text-sm text-foreground">{e.result}</dd>
-              </div>
-            </dl>
-          </article>
-        ))}
-      </div>
+      <ExperienceList entries={experienceEntries} />
     </div>
   );
 }
