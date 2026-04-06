@@ -48,9 +48,9 @@ export default function ExperiencePage() {
       </div>
 
       <div className="space-y-12">
-        {experienceEntries.map((e, idx) => (
+        {experienceEntries.map((e) => (
           <article
-            key={idx}
+            key={`${e.org}-${e.period}-${e.title}`}
             className="relative rounded-lg border bg-card p-6 text-card-foreground shadow-sm"
           >
             <div className="flex items-start justify-between">
@@ -84,8 +84,8 @@ export default function ExperiencePage() {
                 </dt>
                 <dd className="mt-1 text-sm text-foreground">
                   <ul className="list-disc list-inside space-y-2">
-                    {e.action.map((a, i) => (
-                      <li key={i}>{a}</li>
+                    {e.action.map((a) => (
+                      <li key={a}>{a}</li>
                     ))}
                   </ul>
                 </dd>

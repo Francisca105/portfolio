@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail } from "lucide-react";
 
 export default function ContactPage() {
