@@ -41,10 +41,6 @@ export default function ExperiencePage() {
         <h1 className="text-3xl font-bold tracking-tight sm:text-5xl">
           Experience
         </h1>
-        <p className="text-xl text-muted-foreground max-w-[700px]">
-          Selected roles presented using the STAR method (Situation, Task,
-          Action, Result).
-        </p>
       </div>
 
       <div className="space-y-12">
