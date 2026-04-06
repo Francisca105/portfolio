@@ -24,11 +24,14 @@ export function Footer() {
           .
         </p>
         <div className="flex items-center gap-4">
-          <a href="/lab" className="text-xs text-muted-foreground opacity-50 hover:opacity-100 transition-opacity">
+          <a
+            href="/lab"
+            className="text-xs text-muted-foreground opacity-50 hover:opacity-100 transition-opacity"
+          >
             Lab
           </a>
         </div>
       </div>
     </footer>
-  )
+  );
 }

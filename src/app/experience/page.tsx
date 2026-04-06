@@ -5,8 +5,7 @@ const experienceEntries = [
     period: "Jun 2025 - Present",
     situation:
       "University administration relied on manual workflows for course withdrawal and related processes.",
-    task:
-      "Deliver an automated digital system with a robust state machine to replace manual steps and improve reliability.",
+    task: "Deliver an automated digital system with a robust state machine to replace manual steps and improve reliability.",
     stack: ["Java", "Spring Boot", "Postgres", "TypeScript", "Vue.js"],
     action: [
       "Designed the overall architecture using Java and Spring Boot with an explicit state-machine to model workflow stages.",
@@ -23,8 +22,7 @@ const experienceEntries = [
     period: "Aug 2024 - Nov 2024",
     situation:
       "Fermentation operations relied on Excel files to plan and record data, spreadsheets were manually created.",
-    task:
-      "Automate generation of Excel files and migrate the Streamlit prototype to a production stack to centralize and scale operations.",
+    task: "Automate generation of Excel files and migrate the Streamlit prototype to a production stack to centralize and scale operations.",
     stack: ["FastAPI", "Next.js", "Docker", "Postgres", "Python"],
     action: [
       "Reimplemented the Streamlit prototype as a Next.js frontend with a FastAPI backend and containerized the stack with Docker.",
@@ -44,8 +42,8 @@ export default function ExperiencePage() {
           Experience
         </h1>
         <p className="text-xl text-muted-foreground max-w-[700px]">
-          Selected roles presented using the STAR method (Situation, Task, Action,
-          Result).
+          Selected roles presented using the STAR method (Situation, Task,
+          Action, Result).
         </p>
       </div>
 
@@ -59,23 +57,31 @@ export default function ExperiencePage() {
               <div>
                 <div className="text-sm text-muted-foreground">{e.org}</div>
                 <h2 className="mt-1 text-xl font-semibold">{e.title}</h2>
-                <div className="mt-1 text-sm text-muted-foreground">{e.period}</div>
+                <div className="mt-1 text-sm text-muted-foreground">
+                  {e.period}
+                </div>
               </div>
             </div>
 
             <dl className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div>
-                <dt className="text-xs font-medium text-muted-foreground">Situation</dt>
+                <dt className="text-xs font-medium text-muted-foreground">
+                  Situation
+                </dt>
                 <dd className="mt-1 text-sm text-foreground">{e.situation}</dd>
               </div>
 
               <div>
-                <dt className="text-xs font-medium text-muted-foreground">Task</dt>
+                <dt className="text-xs font-medium text-muted-foreground">
+                  Task
+                </dt>
                 <dd className="mt-1 text-sm text-foreground">{e.task}</dd>
               </div>
 
               <div className="sm:col-span-2">
-                <dt className="text-xs font-medium text-muted-foreground">Action</dt>
+                <dt className="text-xs font-medium text-muted-foreground">
+                  Action
+                </dt>
                 <dd className="mt-1 text-sm text-foreground">
                   <ul className="list-disc list-inside space-y-2">
                     {e.action.map((a, i) => (
@@ -86,7 +92,9 @@ export default function ExperiencePage() {
               </div>
 
               <div className="sm:col-span-2">
-                <dt className="text-xs font-medium text-muted-foreground">Result</dt>
+                <dt className="text-xs font-medium text-muted-foreground">
+                  Result
+                </dt>
                 <dd className="mt-1 text-sm text-foreground">{e.result}</dd>
               </div>
             </dl>

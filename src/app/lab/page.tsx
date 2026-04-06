@@ -7,9 +7,12 @@ export default function LabPage() {
         <div className="p-4 rounded-full bg-secondary text-primary">
           <FlaskConical className="h-12 w-12" />
         </div>
-        <h1 className="text-3xl font-bold tracking-tight sm:text-5xl">The Lab</h1>
+        <h1 className="text-3xl font-bold tracking-tight sm:text-5xl">
+          The Lab
+        </h1>
         <p className="text-xl text-muted-foreground">
-          Experimental projects, Three.js demos, and half-baked ideas. This section is a work in progress.
+          Experimental projects, Three.js demos, and half-baked ideas. This
+          section is a work in progress.
         </p>
         <div className="w-full h-40 border-2 border-dashed rounded-xl flex items-center justify-center text-muted-foreground mt-8">
           Experiments coming soon...

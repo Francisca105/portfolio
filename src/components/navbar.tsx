@@ -1,19 +1,19 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { cn } from "@/lib/utils"
-import { ThemeToggle } from "./theme-toggle"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
+import { ThemeToggle } from "./theme-toggle";
 
 const navItems = [
   { name: "Home", href: "/" },
   { name: "Projects", href: "/projects" },
   { name: "Experience", href: "/experience" },
   { name: "Contact", href: "/contact" },
-]
+];
 
 export function Navbar() {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -29,7 +29,9 @@ export function Navbar() {
                 href={item.href}
                 className={cn(
                   "transition-colors hover:text-foreground/80",
-                  pathname === item.href ? "text-foreground" : "text-foreground/60"
+                  pathname === item.href
+                    ? "text-foreground"
+                    : "text-foreground/60",
                 )}
               >
                 {item.name}
@@ -42,5 +44,5 @@ export function Navbar() {
         </div>
       </div>
     </header>
-  )
+  );
 }

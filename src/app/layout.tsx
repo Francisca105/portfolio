@@ -36,14 +36,18 @@ export const metadata: Metadata = {
     "TypeScript",
     "Portfolio",
     "CV",
-    "Lisbon"
+    "Lisbon",
   ],
 
   authors: [{ name: "Francisca Almeida" }],
-  creator: "Francisca Almeida"
+  creator: "Francisca Almeida",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
@@ -56,9 +60,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           disableTransitionOnChange
         >
           <Navbar />
-          <main className="flex-1">
-            {children}
-          </main>
+          <main className="flex-1">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
