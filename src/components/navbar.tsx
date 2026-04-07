@@ -43,7 +43,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <span className="text-lg font-semibold text-foreground">
-              Francisca<span className="text-primary">.dev</span>
+              Francisca <span className="text-primary">Almeida</span>
             </span>
           </Link>
 
