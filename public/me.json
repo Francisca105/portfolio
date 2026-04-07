@@ -1,0 +1,627 @@
+{
+  "meta": {
+    "last_updated": "2026-04-07",
+    "author": "Francisca Almeida",
+    "language": "en"
+  },
+  "basics": {
+    "name": {
+      "first": "Francisca",
+      "last": "Almeida",
+      "full": "Francisca Vicente de Almeida",
+      "aka": "Francisca.105"
+    },
+    "label": "Software Engineer & CS Master's Student",
+    "birth": {
+      "date": "2004-09-15",
+      "location": "Lisbon, Portugal"
+    },
+    "contact": {
+      "email": "francisca04almeida@outlook.com",
+      "location": "Lisbon, Portugal"
+    },
+    "links": {
+      "website": "https://francisca105.github.io/portfolio/",
+      "github": "https://github.com/Francisca105/",
+      "linkedin": "https://www.linkedin.com/in/francisca-105-almeida/"
+    }
+  },
+  "narratives": {
+    "short": "Software Engineer and CS Master's student at IST. Expert in building scalable web systems, automating data workflows, and leading technical teams.",
+    "detailed": "Full-stack developer with experience leading technical teams and building scalable web applications. Strong foundation in backend architecture, system design, and modern DevOps tooling. Passionate about improving user experiences through thoughtful design and robust engineering practices.",
+    "star_highlights": [
+      {
+        "id": "sinfo_2024",
+        "title": "High-Traffic Conference App",
+        "situation": "Needed a reliable platform for Portugal's largest free tech conference.",
+        "action": "Led the dev team to maintain the official web app using Next.js, and integrated Grafana for attendee analytics.",
+        "result": "Successfully served over 1400 users with zero downtime."
+      },
+      {
+        "id": "microharvest_automation",
+        "title": "Data Workflow Automation",
+        "situation": "Internal data operations relied on manual, unscalable Excel-based workflows.",
+        "action": "Developed a custom dashboard using Docker, Next.js, and SQL to automate data entry and report generation.",
+        "result": "Significantly improved scalability and usability of internal data operations."
+      }
+    ]
+  },
+  "experience": {
+    "industry": [
+      {
+        "company": "ThinkOpen Solutions",
+        "context": "Professional",
+        "location": "Lisbon, Portugal",
+        "roles": [
+          {
+            "title": "Software Developer (Odoo/Python)",
+            "start": "2026-05",
+            "end": null,
+            "is_current": true,
+            "description": ""
+          }
+        ]
+      },
+      {
+        "company": "Micro Harvest",
+        "context": "Professional / Internship",
+        "location": "Lisbon, Portugal",
+        "roles": [
+          {
+            "title": "Data Management Intern",
+            "start": "2024-08",
+            "end": "2024-11",
+            "is_current": false,
+            "description": "Automated Excel-based workflows using a custom dashboard built with Docker, Next.js, and SQL. Improved scalability and usability of internal data operations.",
+            "proof_of_competence": {
+              "impact": "Workflow digitalization and automation",
+              "stack": ["Docker", "Next.js", "SQL", "FastAPI"]
+            }
+          }
+        ]
+      }
+    ],
+    "university_roles": [
+      {
+        "organization": "Instituto Superior Técnico @ DEI",
+        "context": "Academic / Professional",
+        "project": "FUTURE@DEI",
+        "roles": [
+          {
+            "title": "Teaching Assistant",
+            "start": "2026-04",
+            "end": "2026-08",
+            "is_current": true,
+            "description": "Selected for a specialized role supporting academic operations within the Computer Science department."
+          }
+        ]
+      },
+      {
+        "organization": "Instituto Superior Técnico @ DSI",
+        "context": "Academic / Scholarship",
+        "project": "Digital Systems Automation",
+        "roles": [
+          {
+            "title": "Full-Stack Developer (Scholarship)",
+            "start": "2025-06",
+            "end": "2026-05",
+            "is_current": true,
+            "description": "Designing and implementing a digital system to automate academic administrative processes. Collaborating with administrative staff to modernize workflows and integrating backend with internal platforms.",
+            "proof_of_competence": {
+              "impact": "Process automation for thousands of potential users (IST students)",
+              "scope": "System architecture"
+            }
+          }
+        ]
+      }
+    ],
+    "student_organizations": [
+      {
+        "organization": "SINFO",
+        "context": "Community / Leadership",
+        "type": "Tech Conference",
+        "roles": [
+          {
+            "title": "Full-Stack Developer & Team Leader",
+            "start": "2024-05",
+            "end": null,
+            "is_current": true,
+            "highlights": [
+              "Part of the team that developed the official web app for over 1400 users.",
+              "Designed and implemented the venue map interface using Figma and Next.js.",
+              "Integrated Grafana dashboards for attendee analytics.",
+              "Led the development team: set goals, timelines, and mentored juniors."
+            ],
+            "proof_of_competence": {
+              "scale": "1400+ active users",
+              "leadership": "Guided a team of junior developers",
+              "analytics": "Real-time attendee tracking via Grafana"
+            }
+          }
+        ]
+      },
+      {
+        "organization": "AeroTéc",
+        "context": "Community / Technical",
+        "type": "Aerospace Student Organization",
+        "roles": [
+          {
+            "title": "Web Developer & Coordinator (Web.Dev)",
+            "start": "2023-10",
+            "end": "2025-08",
+            "is_current": false,
+            "highlights": [
+              "Coordinated onboarding sessions and technical workshops.",
+              "Developed internal tools including recruitment forms and admin platforms.",
+              "Used Express.js and MongoDB for backend development.",
+              "Managed Microsoft Entra ID platform for team identity and access."
+            ]
+          },
+          {
+            "title": "Software Developer (Electronics Team RED)",
+            "start": "2023-10",
+            "end": "2025-02",
+            "is_current": false,
+            "highlights": [
+              "Developed embedded systems for data acquisition and transmission.",
+              "Built a simulator and ground station for a mini flight computer."
+            ],
+            "proof_of_competence": {
+              "field": "Embedded Systems",
+              "complexity": "Real-time communication and hardware-software integration"
+            }
+          }
+        ]
+      },
+      {
+        "organization": "NEIIST",
+        "context": "Community / Technical",
+        "type": "CS Student Organization",
+        "roles": [
+          {
+            "title": "Web Developer & Coordinator",
+            "start": "2024-03",
+            "end": "2025-08",
+            "is_current": false,
+            "highlights": [
+              "Created and deployed merch sales page, managed over 220 customer orders.",
+              "Led website maintenance and UX improvements.",
+              "Recruited and trained new technical members."
+            ],
+            "proof_of_competence": {
+              "scale": "220+ orders processed",
+              "impact": "End-to-end e-commerce solution for the student nucleus"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "education": [
+    {
+      "degree": "Master's Degree in Computer Science and Engineering",
+      "context": "Academic",
+      "institution": "Instituto Superior Técnico",
+      "location": "Lisbon, Portugal",
+      "start": "2025-09",
+      "end": null,
+      "is_current": true
+    },
+    {
+      "degree": "Bachelor's Degree in Computer Science and Engineering",
+      "context": "Academic",
+      "institution": "Instituto Superior Técnico",
+      "location": "Lisbon, Portugal",
+      "start": "2022-09",
+      "end": "2025-08",
+      "is_current": false,
+      "highlights": [
+        "Software Engineering: Developed a complete backend and frontend module for volunteer profile creation with domain invariants and e2e testing (Spring Boot, Vue.js, Cypress).",
+        "Distributed Systems: implemented a distributed tuple space with gRPC and Java; replicated server state using Xu & Liskov and Maekawa algorithms.",
+        "Human-Computer Interaction: Designed high-fidelity mobile UI prototypes for a quizzes platform (Figma + Firebase integration).",
+        "Database Project: Developed ER and relational models for a healthcare system; implemented relational algebra queries and SQL operations."
+      ],
+      "leadership_roles": [
+        {
+          "title": "Year Delegate (1st Year)",
+          "period": "2022 - 2023",
+          "description": "Represented students in academic councils and facilitated communication between faculty and peers."
+        },
+        {
+          "title": "Year Delegate (2nd Year)",
+          "period": "2023 - 2024",
+          "description": "Re-elected as year delegate.",
+          "highlight": "Elected with the highest number of votes among all students at the college."
+        }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "NEIIST - Store",
+      "context": "Professional / Community",
+      "role": "Project Lead & Fullstack Developer",
+      "start": "2024-11",
+      "end": "2025-02",
+      "description": "Developed an online merchandise store for NEIIST to support the student community. Designed for future expansion to include stickers and other products.",
+      "technologies": ["React", "Create-React-App", "PostgreSQL", "JavaScript", "Exceljs"],
+      "proof_of_competence": {
+        "metrics": {
+          "orders_processed": 220
+        },
+        "technical": "Automated order export system using Exceljs"
+      },
+      "links": {
+        "github": "https://github.com/Francisca105/neiist-website/tree/feature/new-shop"
+      }
+    }
+  ],
+  "open_source": [
+    {
+      "project": "Inbox Zero",
+      "context": "Community / Open Source",
+      "type": "Pull Request",
+      "date": "2025-05",
+      "description": "Contributed to Inbox Zero by improving UI consistency and addressing accessibility concerns in the task management interface.",
+      "proof_of_competence": {
+        "impact": "UI Consistency & Accessibility improvements",
+        "status": "Merged"
+      },
+      "links": {
+        "github": "https://github.com/elie222/inbox-zero/pull/390"
+      }
+    }
+  ],
+  "skills": {
+    "languages": [
+      { "name": "Portuguese", "level": "Native" },
+      { "name": "English", "level": "Advanced (C1 listening/reading, B2 speaking, B1 writing)" },
+      { "name": "Spanish", "level": "B2" }
+    ],
+    "technical": [
+      {
+        "name": "TypeScript",
+        "category": "Languages",
+        "level": "Expert",
+        "start_year": 2022,
+        "is_featured": true,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=ts&theme=light",
+          "dark": "https://skillicons.dev/icons?i=ts&theme=dark"
+        }
+      },
+      {
+        "name": "JavaScript",
+        "category": "Languages",
+        "level": "Expert",
+        "start_year": 2018,
+        "is_featured": true,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=js&theme=light",
+          "dark": "https://skillicons.dev/icons?i=js&theme=dark"
+        }
+      },
+      {
+        "name": "Python",
+        "category": "Languages",
+        "level": "Advanced",
+        "start_year": 2022,
+        "is_featured": true,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=py&theme=light",
+          "dark": "https://skillicons.dev/icons?i=py&theme=dark"
+        }
+      },
+      {
+        "name": "Java",
+        "category": "Languages",
+        "level": "Intermediate",
+        "start_year": 2023,
+        "is_featured": true,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=java&theme=light",
+          "dark": "https://skillicons.dev/icons?i=java&theme=dark"
+        }
+      },
+      {
+        "name": "C",
+        "category": "Languages",
+        "level": "Advanced",
+        "start_year": 2023,
+        "is_featured": false,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=c&theme=light",
+          "dark": "https://skillicons.dev/icons?i=c&theme=dark"
+        }
+      },
+      {
+        "name": "C++",
+        "category": "Languages",
+        "level": "Basic",
+        "start_year": 2023,
+        "is_featured": false,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=cpp&theme=light",
+          "dark": "https://skillicons.dev/icons?i=cpp&theme=dark"
+        }
+      },
+      {
+        "name": "PHP",
+        "category": "Languages",
+        "level": "Beginner",
+        "start_year": 2021,
+        "is_featured": false,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=php&theme=light",
+          "dark": "https://skillicons.dev/icons?i=php&theme=dark"
+        }
+      },
+      {
+        "name": "Next.js",
+        "category": "Frameworks",
+        "level": "Advanced",
+        "start_year": 2024,
+        "is_featured": true,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=nextjs&theme=light",
+          "dark": "https://skillicons.dev/icons?i=nextjs&theme=dark"
+        }
+      },
+      {
+        "name": "React",
+        "category": "Frameworks",
+        "level": "Advanced",
+        "start_year": 2024,
+        "is_featured": true,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=react&theme=light",
+          "dark": "https://skillicons.dev/icons?i=react&theme=dark"
+        }
+      },
+      {
+        "name": "Node.js",
+        "category": "Frameworks",
+        "level": "Expert",
+        "start_year": 2019,
+        "is_featured": true,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=nodejs&theme=light",
+          "dark": "https://skillicons.dev/icons?i=nodejs&theme=dark"
+        }
+      },
+      {
+        "name": "Express",
+        "category": "Frameworks",
+        "level": "Advanced",
+        "start_year": 2020,
+        "is_featured": true,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=express&theme=light",
+          "dark": "https://skillicons.dev/icons?i=express&theme=dark"
+        }
+      },
+      {
+        "name": "Vue.js",
+        "category": "Frameworks",
+        "level": "Intermediate",
+        "start_year": 2025,
+        "is_featured": true,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=vue&theme=light",
+          "dark": "https://skillicons.dev/icons?i=vue&theme=dark"
+        }
+      },
+      {
+        "name": "FastAPI",
+        "category": "Frameworks",
+        "level": "Intermediate",
+        "start_year": 2024,
+        "is_featured": true,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=fastapi&theme=light",
+          "dark": "https://skillicons.dev/icons?i=fastapi&theme=dark"
+        }
+      },
+      {
+        "name": "Spring Boot",
+        "category": "Frameworks",
+        "level": "Beginner",
+        "start_year": 2025,
+        "is_featured": true,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=spring&theme=light",
+          "dark": "https://skillicons.dev/icons?i=spring&theme=dark"
+        }
+      },
+      {
+        "name": "Adonis.js",
+        "category": "Frameworks",
+        "level": "Intermediate",
+        "start_year": 2021,
+        "is_featured": false,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=adonis&theme=light",
+          "dark": "https://skillicons.dev/icons?i=adonis&theme=dark"
+        }
+      },
+      {
+        "name": "Docker",
+        "category": "Tools & DevOps",
+        "level": "Intermediate",
+        "start_year": 2024,
+        "is_featured": true,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=docker&theme=light",
+          "dark": "https://skillicons.dev/icons?i=docker&theme=dark"
+        }
+      },
+      {
+        "name": "Kubernetes",
+        "category": "Tools & DevOps",
+        "level": "Beginner",
+        "start_year": 2025,
+        "is_featured": true,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=kubernetes&theme=light",
+          "dark": "https://skillicons.dev/icons?i=kubernetes&theme=dark"
+        }
+      },
+      {
+        "name": "Git",
+        "category": "Tools & DevOps",
+        "level": "Advanced",
+        "start_year": 2020,
+        "is_featured": true,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=git&theme=light",
+          "dark": "https://skillicons.dev/icons?i=git&theme=dark"
+        }
+      },
+      {
+        "name": "Grafana",
+        "category": "Tools & DevOps",
+        "level": "Intermediate",
+        "start_year": 2024,
+        "is_featured": true,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=grafana&theme=light",
+          "dark": "https://skillicons.dev/icons?i=grafana&theme=dark"
+        }
+      },
+      {
+        "name": "Postman",
+        "category": "Tools & DevOps",
+        "level": "Advanced",
+        "start_year": 2022,
+        "is_featured": true,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=postman&theme=light",
+          "dark": "https://skillicons.dev/icons?i=postman&theme=dark"
+        }
+      },
+      {
+        "name": "Figma",
+        "category": "Design Tools",
+        "level": "Advanced",
+        "start_year": 2024,
+        "is_featured": true,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=figma&theme=light",
+          "dark": "https://skillicons.dev/icons?i=figma&theme=dark"
+        }
+      },
+      {
+        "name": "MongoDB",
+        "category": "Databases",
+        "level": "Intermediate",
+        "start_year": 2022,
+        "is_featured": true,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=mongodb&theme=light",
+          "dark": "https://skillicons.dev/icons?i=mongodb&theme=dark"
+        }
+      },
+      {
+        "name": "MySQL",
+        "category": "Databases",
+        "level": "Advanced",
+        "start_year": 2020,
+        "is_featured": true,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=mysql&theme=light",
+          "dark": "https://skillicons.dev/icons?i=mysql&theme=dark"
+        }
+      },
+      {
+        "name": "PostgreSQL",
+        "category": "Databases",
+        "level": "Intermediate",
+        "start_year": 2024,
+        "is_featured": true,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=postgres&theme=light",
+          "dark": "https://skillicons.dev/icons?i=postgres&theme=dark"
+        }
+      },
+      {
+        "name": "Firebase",
+        "category": "Databases",
+        "level": "Beginner",
+        "start_year": 2024,
+        "is_featured": false,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=firebase&theme=light",
+          "dark": "https://skillicons.dev/icons?i=firebase&theme=dark"
+        }
+      },
+      {
+        "name": "HTML",
+        "category": "Other",
+        "level": "Intermediate",
+        "start_year": 2018,
+        "is_featured": true,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=html&theme=light",
+          "dark": "https://skillicons.dev/icons?i=html&theme=dark"
+        }
+      },
+      {
+        "name": "CSS",
+        "category": "Other",
+        "level": "Intermediate",
+        "start_year": 2018,
+        "is_featured": true,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=css&theme=light",
+          "dark": "https://skillicons.dev/icons?i=css&theme=dark"
+        }
+      },
+      {
+        "name": "Prolog",
+        "category": "Languages",
+        "level": "Beginner",
+        "start_year": 2022,
+        "is_featured": false,
+        "icons": null
+      },
+      {
+        "name": "Assembly PEPE-16",
+        "category": "Languages",
+        "level": "Beginner",
+        "start_year": 2023,
+        "is_featured": false,
+        "icons": null
+      },
+      {
+        "name": "Discord.js",
+        "category": "Libraries",
+        "level": "Expert",
+        "start_year": 2019,
+        "is_featured": false,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=discord&theme=light",
+          "dark": "https://skillicons.dev/icons?i=discord&theme=dark"
+        }
+      },
+      {
+        "name": "P5.js",
+        "category": "Libraries",
+        "level": "Basic",
+        "start_year": 2024,
+        "is_featured": false,
+        "icons": null
+      },
+      {
+        "name": "Markdown",
+        "category": "Other",
+        "level": "Expert",
+        "start_year": 2020,
+        "is_featured": false,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=md&theme=light",
+          "dark": "https://skillicons.dev/icons?i=md&theme=dark"
+        }
+      }
+    ]
+  }
+}
