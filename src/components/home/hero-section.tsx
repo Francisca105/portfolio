@@ -49,7 +49,7 @@ export function HeroSection({ basics, narratives }: HeroSectionProps) {
         >
           {"I'm "}
           <span className="text-primary">{basics.name.first}</span>
-          {", a Software Engineer building scalable systems."}
+          {", Full-stack developer driven by technical challenges."}
         </motion.h1>
 
         <motion.p
