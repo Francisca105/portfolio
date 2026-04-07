@@ -102,8 +102,11 @@ export default function ExperiencePage() {
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-6">
-                    {exp.roles.map((role, roleIndex) => (
-                      <div key={roleIndex} className="space-y-3">
+                    {exp.roles.map((role) => (
+                      <div
+                        key={`${role.title}-${role.start ?? ""}-${role.end ?? ""}`}
+                        className="space-y-3"
+                      >
                         <div
                           className={`flex flex-col gap-1 ${
                             index % 2 === 0 ? "md:items-end" : "md:items-start"
