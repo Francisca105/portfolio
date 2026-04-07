@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Check, Copy, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { useState } from "react";
+import { MapSection } from "@/components/contact/map-section";
 import { Loading } from "@/components/loading";
 import { PageTransition } from "@/components/page-transition";
 import { Button } from "@/components/ui/button";
@@ -106,6 +107,8 @@ export default function ContactPage() {
                     <span>{data.basics.contact.location}</span>
                   </div>
                 </div>
+
+                <MapSection />
 
                 {/* Divider */}
                 <div className="border-t border-border/50" />
