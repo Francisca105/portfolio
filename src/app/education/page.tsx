@@ -73,7 +73,7 @@ export default function EducationPage() {
             <div className="space-y-6">
               {data.education.map((edu, index) => (
                 <motion.div
-                  key={index}
+                  key={`${edu.institution}-${edu.degree}`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -121,9 +121,9 @@ export default function EducationPage() {
                             Key Projects & Achievements
                           </h4>
                           <ul className="space-y-2">
-                            {edu.highlights.map((highlight, hIndex) => (
+                            {edu.highlights.map((highlight) => (
                               <li
-                                key={hIndex}
+                                key={highlight}
                                 className="text-sm text-muted-foreground flex items-start gap-2"
                               >
                                 <span className="text-primary mt-1">•</span>
@@ -143,9 +143,9 @@ export default function EducationPage() {
                               Leadership Roles
                             </h4>
                             <div className="space-y-3">
-                              {edu.leadership_roles.map((role, rIndex) => (
+                              {edu.leadership_roles.map((role) => (
                                 <div
-                                  key={rIndex}
+                                  key={`${role.title}-${role.period}`}
                                   className="bg-secondary/30 rounded-lg p-3"
                                 >
                                   <div className="flex items-center justify-between">
@@ -191,7 +191,7 @@ export default function EducationPage() {
             <div className="grid md:grid-cols-2 gap-6">
               {data.experience.university_roles.map((role, index) => (
                 <motion.div
-                  key={index}
+                  key={`${role.organization}-${role.project}`}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -211,8 +211,11 @@ export default function EducationPage() {
                       <p className="text-sm text-primary">{role.project}</p>
                     </CardHeader>
                     <CardContent>
-                      {role.roles.map((r, rIndex) => (
-                        <div key={rIndex} className="space-y-2">
+                      {role.roles.map((r) => (
+                        <div
+                          key={`${r.title}-${r.start ?? ""}-${r.end ?? ""}`}
+                          className="space-y-2"
+                        >
                           <div className="flex items-center justify-between">
                             <span className="font-medium text-foreground">
                               {r.title}
@@ -261,7 +264,7 @@ export default function EducationPage() {
             <div className="space-y-6">
               {data.experience.student_organizations.map((org, index) => (
                 <motion.div
-                  key={index}
+                  key={org.organization}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -300,9 +303,9 @@ export default function EducationPage() {
                           <div className="text-right">
                             {org.roles
                               .filter((r) => r.proof_of_competence?.scale)
-                              .map((r, i) => (
+                              .map((r) => (
                                 <Badge
-                                  key={i}
+                                  key={`${r.title}-${r.proof_of_competence?.scale ?? ""}`}
                                   className="bg-primary text-primary-foreground text-lg px-3 py-1"
                                 >
                                   {r.proof_of_competence?.scale}
@@ -314,9 +317,9 @@ export default function EducationPage() {
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-6">
-                        {org.roles.map((role, rIndex) => (
+                        {org.roles.map((role) => (
                           <div
-                            key={rIndex}
+                            key={`${role.title}-${role.start ?? ""}-${role.end ?? ""}`}
                             className="border-l-2 border-primary/30 pl-4"
                           >
                             <div className="flex items-center gap-2 mb-2">
@@ -335,9 +338,9 @@ export default function EducationPage() {
                             </div>
                             {role.highlights && (
                               <ul className="space-y-1">
-                                {role.highlights.map((h, hIndex) => (
+                                {role.highlights.map((h) => (
                                   <li
-                                    key={hIndex}
+                                    key={h}
                                     className="text-sm text-muted-foreground flex items-start gap-2"
                                   >
                                     <span className="text-primary">•</span>
