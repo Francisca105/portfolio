@@ -2,12 +2,12 @@
 
 import { motion } from "framer-motion";
 import {
-  Calendar,
   Award,
+  Calendar,
   Code,
   GraduationCap,
-  Rocket,
   MapPin,
+  Rocket,
   Users,
 } from "lucide-react";
 import { Loading } from "@/components/loading";
