@@ -100,19 +100,6 @@ export default function ContactPage() {
                 {/* Divider */}
                 <div className="border-t border-border/50" />
 
-                {/* Location */}
-                <div className="p-6 text-center">
-                  <div className="flex items-center justify-center gap-2 text-muted-foreground">
-                    <MapPin className="h-5 w-5" />
-                    <span>{data.basics.contact.location}</span>
-                  </div>
-                </div>
-
-                <MapSection />
-
-                {/* Divider */}
-                <div className="border-t border-border/50" />
-
                 {/* Social Links */}
                 <div className="p-8 flex flex-col sm:flex-row items-center justify-center gap-4">
                   <Button
@@ -146,6 +133,18 @@ export default function ContactPage() {
                     </a>
                   </Button>
                 </div>
+                {/* Divider */}
+                <div className="border-t border-border/50" />
+
+                {/* Location */}
+                <div className="p-6 text-center">
+                  <div className="flex items-center justify-center gap-2 text-muted-foreground">
+                    <MapPin className="h-5 w-5" />
+                    <span>{data.basics.contact.location}</span>
+                  </div>
+                </div>
+
+                <MapSection />
               </CardContent>
             </Card>
           </motion.div>
