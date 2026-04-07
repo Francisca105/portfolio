@@ -79,7 +79,7 @@ export default function ProjectsPage() {
             <div className="grid md:grid-cols-2 gap-6">
               {data.projects.map((project, index) => (
                 <motion.div
-                  key={index}
+                  key={project.title}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -200,7 +200,7 @@ export default function ProjectsPage() {
             <div className="space-y-4">
               {data.open_source.map((contribution, index) => (
                 <motion.div
-                  key={index}
+                  key={`${contribution.project}-${contribution.date}`}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
