@@ -1,20 +1,20 @@
 "use client";
 
-import { useData } from "@/hooks/use-data";
-import { Loading } from "@/components/loading";
-import { PageTransition } from "@/components/page-transition";
 import { motion } from "framer-motion";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import {
+  Calendar,
+  Check,
   ExternalLink,
   Github,
-  Calendar,
   GitPullRequest,
-  Check,
 } from "lucide-react";
+import { Loading } from "@/components/loading";
+import { PageTransition } from "@/components/page-transition";
 import { SkillIcon } from "@/components/skill-icon";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useData } from "@/hooks/use-data";
 
 export default function ProjectsPage() {
   const { data, isLoading, isError } = useData();

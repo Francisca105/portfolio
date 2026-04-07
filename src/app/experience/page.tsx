@@ -1,12 +1,12 @@
 "use client";
 
-import { useData } from "@/hooks/use-data";
+import { motion } from "framer-motion";
+import { Briefcase, Calendar, MapPin } from "lucide-react";
 import { Loading } from "@/components/loading";
 import { PageTransition } from "@/components/page-transition";
-import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Briefcase, Calendar, MapPin } from "lucide-react";
+import { useData } from "@/hooks/use-data";
 
 export default function ExperiencePage() {
   const { data, isLoading, isError } = useData();

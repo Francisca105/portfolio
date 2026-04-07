@@ -1,10 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ArrowRight, Check, Copy } from "lucide-react";
 import Link from "next/link";
-import { ArrowRight, Copy, Check } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { Button } from "@/components/ui/button";
 import type { Basics, Narratives } from "@/types/portfolio";
 
 interface HeroSectionProps {

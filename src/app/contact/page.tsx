@@ -1,13 +1,13 @@
 "use client";
 
-import { useData } from "@/hooks/use-data";
+import { motion } from "framer-motion";
+import { Check, Copy, Github, Linkedin, Mail, MapPin } from "lucide-react";
+import { useState } from "react";
 import { Loading } from "@/components/loading";
 import { PageTransition } from "@/components/page-transition";
-import { motion } from "framer-motion";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Mail, Copy, Check, Github, Linkedin, MapPin } from "lucide-react";
-import { useState } from "react";
+import { Card, CardContent } from "@/components/ui/card";
+import { useData } from "@/hooks/use-data";
 
 export default function ContactPage() {
   const { data, isLoading, isError } = useData();

@@ -1,20 +1,20 @@
 "use client";
 
-import { useData } from "@/hooks/use-data";
-import { Loading } from "@/components/loading";
-import { PageTransition } from "@/components/page-transition";
 import { motion } from "framer-motion";
-import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
-  GraduationCap,
   Calendar,
+  Award,
+  Code,
+  GraduationCap,
+  Rocket,
   MapPin,
   Users,
-  Award,
-  Rocket,
-  Code,
 } from "lucide-react";
+import { Loading } from "@/components/loading";
+import { PageTransition } from "@/components/page-transition";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { useData } from "@/hooks/use-data";
 
 export default function EducationPage() {
   const { data, isLoading, isError } = useData();

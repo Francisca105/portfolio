@@ -1,12 +1,12 @@
 "use client";
 
+import { motion } from "framer-motion";
+import { Download, Menu, Moon, Sun, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useTheme } from "next-themes";
-import { motion } from "framer-motion";
-import { Sun, Moon, Download, Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
