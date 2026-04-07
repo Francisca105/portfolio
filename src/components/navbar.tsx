@@ -94,7 +94,10 @@ export function Navbar() {
               size="sm"
               className="hidden sm:flex gap-2"
             >
-              <a href="http://raw.githubusercontent.com/Francisca105/Francisca105/refs/heads/main/cv.pdf" download>
+              <a
+                href="http://raw.githubusercontent.com/Francisca105/Francisca105/refs/heads/main/cv.pdf"
+                download
+              >
                 <Download className="h-4 w-4" />
                 <span>Download CV</span>
               </a>
