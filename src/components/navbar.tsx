@@ -57,7 +57,7 @@ export function Navbar() {
                   "relative px-3 py-2 text-sm font-medium transition-colors rounded-lg",
                   pathname === link.href
                     ? "text-primary"
-                    : "text-muted-foreground hover:text-foreground"
+                    : "text-muted-foreground hover:text-foreground",
                 )}
               >
                 {link.label}
@@ -88,7 +88,12 @@ export function Navbar() {
               )}
             </Button>
 
-            <Button asChild variant="default" size="sm" className="hidden sm:flex gap-2">
+            <Button
+              asChild
+              variant="default"
+              size="sm"
+              className="hidden sm:flex gap-2"
+            >
               <a href="/cv.pdf" download>
                 <Download className="h-4 w-4" />
                 <span>Download CV</span>
@@ -103,7 +108,11 @@ export function Navbar() {
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
             >
-              {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {mobileMenuOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </Button>
           </div>
         </div>
@@ -126,7 +135,7 @@ export function Navbar() {
                     "px-3 py-2 text-sm font-medium rounded-lg transition-colors",
                     pathname === link.href
                       ? "text-primary bg-primary/10"
-                      : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                      : "text-muted-foreground hover:text-foreground hover:bg-secondary",
                   )}
                 >
                   {link.label}

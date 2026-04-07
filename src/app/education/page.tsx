@@ -33,7 +33,10 @@ export default function EducationPage() {
   const formatDate = (dateStr: string | null) => {
     if (!dateStr) return "Present";
     const date = new Date(dateStr);
-    return date.toLocaleDateString("en-US", { month: "short", year: "numeric" });
+    return date.toLocaleDateString("en-US", {
+      month: "short",
+      year: "numeric",
+    });
   };
 
   return (
@@ -132,39 +135,40 @@ export default function EducationPage() {
                       )}
 
                       {/* Leadership Roles */}
-                      {edu.leadership_roles && edu.leadership_roles.length > 0 && (
-                        <div className="pt-4 border-t border-border/50">
-                          <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
-                            <Award className="h-4 w-4 text-primary" />
-                            Leadership Roles
-                          </h4>
-                          <div className="space-y-3">
-                            {edu.leadership_roles.map((role, rIndex) => (
-                              <div
-                                key={rIndex}
-                                className="bg-secondary/30 rounded-lg p-3"
-                              >
-                                <div className="flex items-center justify-between">
-                                  <span className="font-medium text-foreground">
-                                    {role.title}
-                                  </span>
-                                  <span className="text-xs text-muted-foreground">
-                                    {role.period}
-                                  </span>
+                      {edu.leadership_roles &&
+                        edu.leadership_roles.length > 0 && (
+                          <div className="pt-4 border-t border-border/50">
+                            <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+                              <Award className="h-4 w-4 text-primary" />
+                              Leadership Roles
+                            </h4>
+                            <div className="space-y-3">
+                              {edu.leadership_roles.map((role, rIndex) => (
+                                <div
+                                  key={rIndex}
+                                  className="bg-secondary/30 rounded-lg p-3"
+                                >
+                                  <div className="flex items-center justify-between">
+                                    <span className="font-medium text-foreground">
+                                      {role.title}
+                                    </span>
+                                    <span className="text-xs text-muted-foreground">
+                                      {role.period}
+                                    </span>
+                                  </div>
+                                  <p className="text-sm text-muted-foreground mt-1">
+                                    {role.description}
+                                  </p>
+                                  {role.highlight && (
+                                    <Badge className="mt-2 bg-primary text-primary-foreground">
+                                      {role.highlight}
+                                    </Badge>
+                                  )}
                                 </div>
-                                <p className="text-sm text-muted-foreground mt-1">
-                                  {role.description}
-                                </p>
-                                {role.highlight && (
-                                  <Badge className="mt-2 bg-primary text-primary-foreground">
-                                    {role.highlight}
-                                  </Badge>
-                                )}
-                              </div>
-                            ))}
+                              ))}
+                            </div>
                           </div>
-                        </div>
-                      )}
+                        )}
                     </CardContent>
                   </Card>
                 </motion.div>
@@ -290,7 +294,9 @@ export default function EducationPage() {
                         </div>
 
                         {/* Scale Metrics */}
-                        {org.roles.some((r) => r.proof_of_competence?.scale) && (
+                        {org.roles.some(
+                          (r) => r.proof_of_competence?.scale,
+                        ) && (
                           <div className="text-right">
                             {org.roles
                               .filter((r) => r.proof_of_competence?.scale)

@@ -244,7 +244,13 @@
       "start": "2024-11",
       "end": "2025-02",
       "description": "Developed an online merchandise store for NEIIST to support the student community. Designed for future expansion to include stickers and other products.",
-      "technologies": ["React", "Create-React-App", "PostgreSQL", "JavaScript", "Exceljs"],
+      "technologies": [
+        "React",
+        "Create-React-App",
+        "PostgreSQL",
+        "JavaScript",
+        "Exceljs"
+      ],
       "proof_of_competence": {
         "metrics": {
           "orders_processed": 220
@@ -275,7 +281,10 @@
   "skills": {
     "languages": [
       { "name": "Portuguese", "level": "Native" },
-      { "name": "English", "level": "Advanced (C1 listening/reading, B2 speaking, B1 writing)" },
+      {
+        "name": "English",
+        "level": "Advanced (C1 listening/reading, B2 speaking, B1 writing)"
+      },
       { "name": "Spanish", "level": "B2" }
     ],
     "technical": [

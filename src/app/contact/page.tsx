@@ -47,7 +47,9 @@ export default function ContactPage() {
               {"Let's Connect"}
             </h1>
             <p className="mt-4 text-lg text-muted-foreground max-w-xl mx-auto">
-              {"I'm always open to discussing new opportunities, collaborations, or just having a chat about tech."}
+              {
+                "I'm always open to discussing new opportunities, collaborations, or just having a chat about tech."
+              }
             </p>
           </motion.div>
 
@@ -81,7 +83,9 @@ export default function ContactPage() {
                     {copied ? (
                       <>
                         <Check className="h-5 w-5" />
-                        <span className="font-medium">Copied to clipboard!</span>
+                        <span className="font-medium">
+                          Copied to clipboard!
+                        </span>
                       </>
                     ) : (
                       <>

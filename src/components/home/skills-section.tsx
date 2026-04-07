@@ -10,7 +10,9 @@ interface SkillsSectionProps {
 
 export function SkillsSection({ skills }: SkillsSectionProps) {
   const featuredSkills = skills.technical.filter((skill) => skill.is_featured);
-  const categories = [...new Set(featuredSkills.map((skill) => skill.category))];
+  const categories = [
+    ...new Set(featuredSkills.map((skill) => skill.category)),
+  ];
 
   return (
     <section className="py-24 px-4 sm:px-6 lg:px-8">
@@ -57,7 +59,11 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
                       }}
                       className="flex items-center gap-3 px-4 py-2 bg-secondary/50 rounded-lg border border-border/50 hover:border-primary/30 transition-colors"
                     >
-                      <SkillIcon icons={skill.icons} name={skill.name} size={24} />
+                      <SkillIcon
+                        icons={skill.icons}
+                        name={skill.name}
+                        size={24}
+                      />
                       <span className="text-sm font-medium text-foreground">
                         {skill.name}
                       </span>

@@ -15,7 +15,9 @@ export default function ExperiencePage() {
   if (isError || !data) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p className="text-muted-foreground">Failed to load data. Please try again later.</p>
+        <p className="text-muted-foreground">
+          Failed to load data. Please try again later.
+        </p>
       </div>
     );
   }
@@ -23,7 +25,10 @@ export default function ExperiencePage() {
   const formatDate = (dateStr: string | null) => {
     if (!dateStr) return "Present";
     const date = new Date(dateStr);
-    return date.toLocaleDateString("en-US", { month: "short", year: "numeric" });
+    return date.toLocaleDateString("en-US", {
+      month: "short",
+      year: "numeric",
+    });
   };
 
   return (
@@ -77,7 +82,10 @@ export default function ExperiencePage() {
                         index % 2 === 0 ? "md:items-end" : "md:items-start"
                       }`}
                     >
-                      <Badge variant="outline" className="w-fit text-primary border-primary/30">
+                      <Badge
+                        variant="outline"
+                        className="w-fit text-primary border-primary/30"
+                      >
                         {exp.context}
                       </Badge>
                       <CardTitle className="text-xl text-foreground">
@@ -132,7 +140,9 @@ export default function ExperiencePage() {
                         {role.proof_of_competence && (
                           <div
                             className={`flex flex-wrap gap-2 ${
-                              index % 2 === 0 ? "md:justify-end" : "md:justify-start"
+                              index % 2 === 0
+                                ? "md:justify-end"
+                                : "md:justify-start"
                             }`}
                           >
                             {role.proof_of_competence.impact && (

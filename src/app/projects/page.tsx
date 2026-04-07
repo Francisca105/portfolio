@@ -7,7 +7,13 @@ import { motion } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, Calendar, GitPullRequest, Check } from "lucide-react";
+import {
+  ExternalLink,
+  Github,
+  Calendar,
+  GitPullRequest,
+  Check,
+} from "lucide-react";
 import { SkillIcon } from "@/components/skill-icon";
 
 export default function ProjectsPage() {
@@ -26,13 +32,16 @@ export default function ProjectsPage() {
 
   const formatDate = (dateStr: string) => {
     const date = new Date(dateStr);
-    return date.toLocaleDateString("en-US", { month: "short", year: "numeric" });
+    return date.toLocaleDateString("en-US", {
+      month: "short",
+      year: "numeric",
+    });
   };
 
   // Find matching skill icons for technologies
   const getSkillIcon = (techName: string) => {
     const skill = data.skills.technical.find(
-      (s) => s.name.toLowerCase() === techName.toLowerCase()
+      (s) => s.name.toLowerCase() === techName.toLowerCase(),
     );
     return skill?.icons;
   };
@@ -95,7 +104,8 @@ export default function ProjectsPage() {
                         </div>
                         <div className="flex items-center gap-2 text-sm text-muted-foreground">
                           <Calendar className="h-4 w-4" />
-                          {formatDate(project.start)} - {formatDate(project.end)}
+                          {formatDate(project.start)} -{" "}
+                          {formatDate(project.end)}
                         </div>
                       </div>
                     </CardHeader>
@@ -114,7 +124,11 @@ export default function ProjectsPage() {
                               className="flex items-center gap-1.5 px-2 py-1 bg-secondary/50 rounded-md text-xs"
                             >
                               {icons && (
-                                <SkillIcon icons={icons} name={tech} size={16} />
+                                <SkillIcon
+                                  icons={icons}
+                                  name={tech}
+                                  size={16}
+                                />
                               )}
                               <span className="text-foreground">{tech}</span>
                             </div>
@@ -126,8 +140,11 @@ export default function ProjectsPage() {
                       {project.proof_of_competence?.metrics && (
                         <div className="pt-3 border-t border-border/50">
                           <Badge className="bg-primary text-primary-foreground">
-                            {project.proof_of_competence.metrics.orders_processed}+
-                            orders processed
+                            {
+                              project.proof_of_competence.metrics
+                                .orders_processed
+                            }
+                            + orders processed
                           </Badge>
                         </div>
                       )}

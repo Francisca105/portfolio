@@ -14,7 +14,9 @@ export default function HomePage() {
   if (isError || !data) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p className="text-muted-foreground">Failed to load data. Please try again later.</p>
+        <p className="text-muted-foreground">
+          Failed to load data. Please try again later.
+        </p>
       </div>
     );
   }
