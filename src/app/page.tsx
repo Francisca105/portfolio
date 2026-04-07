@@ -26,7 +26,7 @@ export default function HomePage() {
       <div className="min-h-screen">
         <HeroSection basics={data.basics} narratives={data.narratives} />
         <HighlightsSection highlights={data.narratives.star_highlights} />
-        <SkillsSection skills={data.skills} />
+        {/* <SkillsSection skills={data.skills} /> */}
       </div>
     </PageTransition>
   );
