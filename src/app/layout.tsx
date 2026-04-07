@@ -2,66 +2,68 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const geist = Geist({
   subsets: ["latin"],
+  variable: "--font-geist-sans",
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
   subsets: ["latin"],
+  variable: "--font-geist-mono",
 });
 
 export const metadata: Metadata = {
-  title: {
-    template: "%s | Francisca Almeida",
-    default: "Francisca Almeida",
-  },
-
+  title: "Francisca Almeida | Software Engineer",
   description:
-    "Full-Stack Software Engineer based in Lisbon. Building scalable systems with Java (Spring Boot), Next.js, React and FastAPI. Focused on automation, performance, and clean architecture.",
-
+    "Software Engineer and CS Master's student at IST. Expert in building scalable web systems, automating data workflows, and leading technical teams.",
   keywords: [
     "Francisca Almeida",
     "Software Engineer",
-    "Full Stack Developer",
-    "Next.js",
+    "Full-Stack Developer",
+    "IST",
+    "Portugal",
     "React",
-    "Spring Boot",
-    "Java",
-    "FastAPI",
+    "Next.js",
     "TypeScript",
-    "Portfolio",
-    "CV",
-    "Lisbon",
   ],
-
   authors: [{ name: "Francisca Almeida" }],
   creator: "Francisca Almeida",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    title: "Francisca Almeida | Software Engineer",
+    description:
+      "Software Engineer and CS Master's student at IST. Expert in building scalable web systems.",
+    siteName: "Francisca Almeida Portfolio",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Francisca Almeida | Software Engineer",
+    description:
+      "Software Engineer and CS Master's student at IST. Expert in building scalable web systems.",
+  },
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
+        className={`${geist.variable} ${geistMono.variable} font-sans antialiased`}
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
           <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          <main className="pt-16">{children}</main>
         </ThemeProvider>
       </body>
     </html>
