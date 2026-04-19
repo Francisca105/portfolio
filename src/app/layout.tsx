@@ -16,8 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Francisca Almeida | Software Engineer",
-  description:
-    "Software Engineer and CS Master's student at IST. Expert in building scalable web systems, automating data workflows, and leading technical teams.",
+  description: "Software Engineer and CS Master's student at IST.",
   keywords: [
     "Francisca Almeida",
     "Software Engineer",
@@ -34,15 +33,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     title: "Francisca Almeida | Software Engineer",
-    description:
-      "Software Engineer and CS Master's student at IST. Expert in building scalable web systems.",
+    description: "Software Engineer and CS Master's student at IST.",
     siteName: "Francisca Almeida Portfolio",
   },
   twitter: {
     card: "summary_large_image",
     title: "Francisca Almeida | Software Engineer",
-    description:
-      "Software Engineer and CS Master's student at IST. Expert in building scalable web systems.",
+    description: "Software Engineer and CS Master's student at IST.",
   },
 };
 
