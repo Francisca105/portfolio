@@ -95,7 +95,7 @@ export function Navbar() {
               className="hidden sm:flex gap-2"
             >
               <a
-                href="http://raw.githubusercontent.com/Francisca105/Francisca105/refs/heads/main/cv.pdf"
+                href="https://raw.githubusercontent.com/Francisca105/Francisca105/refs/heads/main/cv.pdf"
                 download
               >
                 <Download className="h-4 w-4" />
@@ -145,7 +145,7 @@ export function Navbar() {
                 </Link>
               ))}
               <a
-                href="http://raw.githubusercontent.com/Francisca105/Francisca105/refs/heads/main/cv.pdf"
+                href="https://raw.githubusercontent.com/Francisca105/Francisca105/refs/heads/main/cv.pdf"
                 download
                 className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-primary"
               >

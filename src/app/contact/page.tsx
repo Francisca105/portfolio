@@ -159,7 +159,7 @@ export default function ContactPage() {
             <p className="text-sm text-muted-foreground">
               Prefer a formal introduction?{" "}
               <a
-                href="http://raw.githubusercontent.com/Francisca105/Francisca105/refs/heads/main/cv.pdf"
+                href="https://raw.githubusercontent.com/Francisca105/Francisca105/refs/heads/main/cv.pdf"
                 download
                 className="text-primary hover:underline"
               >
