@@ -4,7 +4,7 @@ import useSWR from "swr";
 import type { PortfolioData } from "@/types/portfolio";
 
 const DATA_URL =
-  "https://raw.githubusercontent.com/Francisca105/Francisca105/refs/heads/main/me.json";
+  "/me.json";
 
 const fetcher = async (url: string): Promise<PortfolioData> => {
   const res = await fetch(url);
