@@ -40,6 +40,8 @@ export function SkillIcon({ icons, name, size = 24 }: SkillIconProps) {
       height={size}
       className="object-contain"
       unoptimized
+      // Load skillicons images eagerly to avoid LCP delays when they're above the fold.
+      loading={iconUrl.includes("skillicons.dev") ? "eager" : undefined}
     />
   );
 }
