@@ -140,10 +140,7 @@ export default function ProjectsPage() {
                       {project.proof_of_competence?.metrics && (
                         <div className="pt-3 border-t border-border/50">
                           <Badge className="bg-primary text-primary-foreground">
-                            {
-                              project.proof_of_competence.metrics
-                                .badge
-                            }
+                            {project.proof_of_competence.metrics.badge}
                           </Badge>
                         </div>
                       )}
