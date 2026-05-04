@@ -142,9 +142,8 @@ export default function ProjectsPage() {
                           <Badge className="bg-primary text-primary-foreground">
                             {
                               project.proof_of_competence.metrics
-                                .orders_processed
+                                .badge
                             }
-                            + orders processed
                           </Badge>
                         </div>
                       )}

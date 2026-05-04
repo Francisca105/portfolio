@@ -59,7 +59,7 @@ export interface ProofOfCompetence {
   field?: string;
   complexity?: string;
   metrics?: {
-    orders_processed?: number;
+    badge?: string;
   };
   technical?: string;
   status?: string;
