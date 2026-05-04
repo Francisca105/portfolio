@@ -1,0 +1,5 @@
+# Allow all crawlers to access all pages
+User-agent: *
+Allow: /
+
+Sitemap: https://falmeida.dev/sitemap.xml
