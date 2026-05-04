@@ -27,7 +27,7 @@
     }
   },
   "narratives": {
-    "short": "Software Engineer and CS Master's student at IST. Expert in building scalable web systems, automating data workflows, and leading technical teams.",
+    "short": "Software Engineer and CS Master's student at IST. Specialized in transforming complex administrative and data workflows into robust digital solutions.",
     "detailed": "Full-stack developer with experience leading technical teams and building scalable web applications. Strong foundation in backend architecture, system design, and modern DevOps tooling. Passionate about improving user experiences through thoughtful design and robust engineering practices.",
     "star_highlights": [
       {
@@ -244,21 +244,36 @@
       "start": "2024-11",
       "end": "2025-02",
       "description": "Developed an online merchandise store for NEIIST to support the student community. Designed for future expansion to include stickers and other products.",
-      "technologies": [
-        "React",
-        "Create-React-App",
-        "PostgreSQL",
-        "JavaScript",
-        "Exceljs"
-      ],
+      "technologies": ["React", "Create-React-App", "PostgreSQL", "JavaScript", "Exceljs"],
       "proof_of_competence": {
         "metrics": {
-          "orders_processed": 220
+          "badge": "220+ orders processed"
         },
         "technical": "Automated order export system using Exceljs"
       },
       "links": {
         "github": "https://github.com/Francisca105/neiist-website/tree/feature/new-shop"
+      }
+    },
+    {
+      "title": "SINFO - Official Website Rebuild",
+      "context": "Community / Technical Leadership",
+      "role": "Project Lead & Fullstack Developer",
+      "start": "2025-10",
+      "end": "2026-04",
+      "is_current": true,
+      "description": "Led the complete architectural rebuild and modernization of the official SINFO website. Focused on improving developer experience, system maintainability, and implementing a robust digital analytics infrastructure.",
+      "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Figma", "Grafana"],
+      "proof_of_competence": {
+        "metrics": {
+          "badge": "14.3k+ visits during the event month",
+          "engagement": "6,000+ visits and 10,000+ page views per month",
+          "analytics_impact": "Engineered a custom referral tracking system (ref query params) integrated with Grafana"
+        },
+        "technical": "Architected a modular frontend using Next.js and implemented real-time marketing attribution dashboards to monitor traffic sources and campaign effectiveness."
+      },
+      "links": {
+        "github": "https://github.com/sinfo/sinfo-website"
       }
     }
   ],
@@ -281,10 +296,7 @@
   "skills": {
     "languages": [
       { "name": "Portuguese", "level": "Native" },
-      {
-        "name": "English",
-        "level": "Advanced (C1 listening/reading, B2 speaking, B1 writing)"
-      },
+      { "name": "English", "level": "Advanced (C1 listening/reading, B2 speaking, B1 writing)" },
       { "name": "Spanish", "level": "B2" }
     ],
     "technical": [
@@ -629,6 +641,17 @@
         "icons": {
           "light": "https://skillicons.dev/icons?i=md&theme=light",
           "dark": "https://skillicons.dev/icons?i=md&theme=dark"
+        }
+      },
+      {
+        "name": "Tailwind CSS",
+        "category": "Frameworks",
+        "level": "Advanced",
+        "start_year": 2024,
+        "is_featured": false,
+        "icons": {
+          "light": "https://skillicons.dev/icons?i=tailwind&theme=light",
+          "dark": "https://skillicons.dev/icons?i=tailwind&theme=dark"
         }
       }
     ]
