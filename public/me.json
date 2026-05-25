@@ -291,6 +291,20 @@
       "links": {
         "github": "https://github.com/elie222/inbox-zero/pull/390"
       }
+    },
+    {
+      "project": "Criador Horários (IST)",
+      "context": "Community / Open Source",
+      "type": "Pull Request",
+      "date": "2026-02",
+      "description": "Resolved a critical state rendering bug in the student-led schedule builder where timetable lessons would intermittently disappear. Fixed the identification logic by replacing non-unique class name identifiers with unique IDs, eliminating rendering collisions during view updates and filter changes.",
+      "proof_of_competence": {
+        "impact": "Fixed state sync & item collisions in timetable rendering",
+        "status": "Merged"
+      },
+      "links": {
+        "github": "https://github.com/Criador-Horarios/Criador-Horarios/pull/113"
+      }
     }
   ],
   "skills": {
