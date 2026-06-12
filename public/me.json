@@ -321,12 +321,18 @@
   ],
   "skills": {
     "languages": [
-      { "name": "Portuguese", "level": "Native" },
+      {
+        "name": "Portuguese",
+        "level": "Native"
+      },
       {
         "name": "English",
         "level": "Advanced (C1 listening/reading, B2 speaking, B1 writing)"
       },
-      { "name": "Spanish", "level": "B2" }
+      {
+        "name": "Spanish",
+        "level": "B2"
+      }
     ],
     "technical": [
       {
@@ -335,6 +341,7 @@
         "level": "Expert",
         "start_year": 2022,
         "is_featured": true,
+        "show_in_website": true,
         "icons": {
           "light": "https://skillicons.dev/icons?i=ts&theme=light",
           "dark": "https://skillicons.dev/icons?i=ts&theme=dark"
@@ -346,6 +353,7 @@
         "level": "Expert",
         "start_year": 2018,
         "is_featured": true,
+        "show_in_website": true,
         "icons": {
           "light": "https://skillicons.dev/icons?i=js&theme=light",
           "dark": "https://skillicons.dev/icons?i=js&theme=dark"
@@ -357,6 +365,7 @@
         "level": "Advanced",
         "start_year": 2022,
         "is_featured": true,
+        "show_in_website": false,
         "icons": {
           "light": "https://skillicons.dev/icons?i=py&theme=light",
           "dark": "https://skillicons.dev/icons?i=py&theme=dark"
@@ -368,6 +377,7 @@
         "level": "Intermediate",
         "start_year": 2023,
         "is_featured": true,
+        "show_in_website": false,
         "icons": {
           "light": "https://skillicons.dev/icons?i=java&theme=light",
           "dark": "https://skillicons.dev/icons?i=java&theme=dark"
@@ -379,6 +389,7 @@
         "level": "Advanced",
         "start_year": 2023,
         "is_featured": false,
+        "show_in_website": false,
         "icons": {
           "light": "https://skillicons.dev/icons?i=c&theme=light",
           "dark": "https://skillicons.dev/icons?i=c&theme=dark"
@@ -390,6 +401,7 @@
         "level": "Basic",
         "start_year": 2023,
         "is_featured": false,
+        "show_in_website": false,
         "icons": {
           "light": "https://skillicons.dev/icons?i=cpp&theme=light",
           "dark": "https://skillicons.dev/icons?i=cpp&theme=dark"
@@ -401,6 +413,7 @@
         "level": "Beginner",
         "start_year": 2021,
         "is_featured": false,
+        "show_in_website": false,
         "icons": {
           "light": "https://skillicons.dev/icons?i=php&theme=light",
           "dark": "https://skillicons.dev/icons?i=php&theme=dark"
@@ -412,6 +425,7 @@
         "level": "Advanced",
         "start_year": 2024,
         "is_featured": true,
+        "show_in_website": true,
         "icons": {
           "light": "https://skillicons.dev/icons?i=nextjs&theme=light",
           "dark": "https://skillicons.dev/icons?i=nextjs&theme=dark"
@@ -423,6 +437,7 @@
         "level": "Advanced",
         "start_year": 2024,
         "is_featured": true,
+        "show_in_website": false,
         "icons": {
           "light": "https://skillicons.dev/icons?i=react&theme=light",
           "dark": "https://skillicons.dev/icons?i=react&theme=dark"
@@ -434,6 +449,7 @@
         "level": "Expert",
         "start_year": 2019,
         "is_featured": true,
+        "show_in_website": false,
         "icons": {
           "light": "https://skillicons.dev/icons?i=nodejs&theme=light",
           "dark": "https://skillicons.dev/icons?i=nodejs&theme=dark"
@@ -445,6 +461,7 @@
         "level": "Advanced",
         "start_year": 2020,
         "is_featured": true,
+        "show_in_website": false,
         "icons": {
           "light": "https://skillicons.dev/icons?i=express&theme=light",
           "dark": "https://skillicons.dev/icons?i=express&theme=dark"
@@ -456,6 +473,7 @@
         "level": "Intermediate",
         "start_year": 2025,
         "is_featured": true,
+        "show_in_website": false,
         "icons": {
           "light": "https://skillicons.dev/icons?i=vue&theme=light",
           "dark": "https://skillicons.dev/icons?i=vue&theme=dark"
@@ -467,6 +485,7 @@
         "level": "Intermediate",
         "start_year": 2024,
         "is_featured": true,
+        "show_in_website": false,
         "icons": {
           "light": "https://skillicons.dev/icons?i=fastapi&theme=light",
           "dark": "https://skillicons.dev/icons?i=fastapi&theme=dark"
@@ -478,6 +497,7 @@
         "level": "Beginner",
         "start_year": 2025,
         "is_featured": true,
+        "show_in_website": false,
         "icons": {
           "light": "https://skillicons.dev/icons?i=spring&theme=light",
           "dark": "https://skillicons.dev/icons?i=spring&theme=dark"
@@ -489,6 +509,7 @@
         "level": "Intermediate",
         "start_year": 2021,
         "is_featured": false,
+        "show_in_website": false,
         "icons": {
           "light": "https://skillicons.dev/icons?i=adonis&theme=light",
           "dark": "https://skillicons.dev/icons?i=adonis&theme=dark"
@@ -500,6 +521,7 @@
         "level": "Intermediate",
         "start_year": 2024,
         "is_featured": true,
+        "show_in_website": false,
         "icons": {
           "light": "https://skillicons.dev/icons?i=docker&theme=light",
           "dark": "https://skillicons.dev/icons?i=docker&theme=dark"
@@ -511,6 +533,7 @@
         "level": "Beginner",
         "start_year": 2025,
         "is_featured": true,
+        "show_in_website": false,
         "icons": {
           "light": "https://skillicons.dev/icons?i=kubernetes&theme=light",
           "dark": "https://skillicons.dev/icons?i=kubernetes&theme=dark"
@@ -522,6 +545,7 @@
         "level": "Advanced",
         "start_year": 2020,
         "is_featured": true,
+        "show_in_website": true,
         "icons": {
           "light": "https://skillicons.dev/icons?i=git&theme=light",
           "dark": "https://skillicons.dev/icons?i=git&theme=dark"
@@ -533,6 +557,7 @@
         "level": "Intermediate",
         "start_year": 2024,
         "is_featured": true,
+        "show_in_website": false,
         "icons": {
           "light": "https://skillicons.dev/icons?i=grafana&theme=light",
           "dark": "https://skillicons.dev/icons?i=grafana&theme=dark"
@@ -544,6 +569,7 @@
         "level": "Advanced",
         "start_year": 2022,
         "is_featured": true,
+        "show_in_website": false,
         "icons": {
           "light": "https://skillicons.dev/icons?i=postman&theme=light",
           "dark": "https://skillicons.dev/icons?i=postman&theme=dark"
@@ -555,6 +581,7 @@
         "level": "Advanced",
         "start_year": 2024,
         "is_featured": true,
+        "show_in_website": false,
         "icons": {
           "light": "https://skillicons.dev/icons?i=figma&theme=light",
           "dark": "https://skillicons.dev/icons?i=figma&theme=dark"
@@ -566,6 +593,7 @@
         "level": "Intermediate",
         "start_year": 2022,
         "is_featured": true,
+        "show_in_website": false,
         "icons": {
           "light": "https://skillicons.dev/icons?i=mongodb&theme=light",
           "dark": "https://skillicons.dev/icons?i=mongodb&theme=dark"
@@ -577,6 +605,7 @@
         "level": "Advanced",
         "start_year": 2020,
         "is_featured": true,
+        "show_in_website": false,
         "icons": {
           "light": "https://skillicons.dev/icons?i=mysql&theme=light",
           "dark": "https://skillicons.dev/icons?i=mysql&theme=dark"
@@ -588,6 +617,7 @@
         "level": "Intermediate",
         "start_year": 2024,
         "is_featured": true,
+        "show_in_website": false,
         "icons": {
           "light": "https://skillicons.dev/icons?i=postgres&theme=light",
           "dark": "https://skillicons.dev/icons?i=postgres&theme=dark"
@@ -599,6 +629,7 @@
         "level": "Beginner",
         "start_year": 2024,
         "is_featured": false,
+        "show_in_website": false,
         "icons": {
           "light": "https://skillicons.dev/icons?i=firebase&theme=light",
           "dark": "https://skillicons.dev/icons?i=firebase&theme=dark"
@@ -610,6 +641,7 @@
         "level": "Intermediate",
         "start_year": 2018,
         "is_featured": true,
+        "show_in_website": false,
         "icons": {
           "light": "https://skillicons.dev/icons?i=html&theme=light",
           "dark": "https://skillicons.dev/icons?i=html&theme=dark"
@@ -621,6 +653,7 @@
         "level": "Intermediate",
         "start_year": 2018,
         "is_featured": true,
+        "show_in_website": false,
         "icons": {
           "light": "https://skillicons.dev/icons?i=css&theme=light",
           "dark": "https://skillicons.dev/icons?i=css&theme=dark"
@@ -632,6 +665,7 @@
         "level": "Beginner",
         "start_year": 2022,
         "is_featured": false,
+        "show_in_website": false,
         "icons": null
       },
       {
@@ -640,6 +674,7 @@
         "level": "Beginner",
         "start_year": 2023,
         "is_featured": false,
+        "show_in_website": false,
         "icons": null
       },
       {
@@ -648,6 +683,7 @@
         "level": "Expert",
         "start_year": 2019,
         "is_featured": false,
+        "show_in_website": false,
         "icons": {
           "light": "https://skillicons.dev/icons?i=discord&theme=light",
           "dark": "https://skillicons.dev/icons?i=discord&theme=dark"
@@ -659,6 +695,7 @@
         "level": "Basic",
         "start_year": 2024,
         "is_featured": false,
+        "show_in_website": false,
         "icons": null
       },
       {
@@ -667,6 +704,7 @@
         "level": "Expert",
         "start_year": 2020,
         "is_featured": false,
+        "show_in_website": false,
         "icons": {
           "light": "https://skillicons.dev/icons?i=md&theme=light",
           "dark": "https://skillicons.dev/icons?i=md&theme=dark"
@@ -678,6 +716,7 @@
         "level": "Advanced",
         "start_year": 2024,
         "is_featured": false,
+        "show_in_website": false,
         "icons": {
           "light": "https://skillicons.dev/icons?i=tailwind&theme=light",
           "dark": "https://skillicons.dev/icons?i=tailwind&theme=dark"

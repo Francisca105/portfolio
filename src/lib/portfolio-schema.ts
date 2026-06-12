@@ -201,6 +201,8 @@ const technicalSkillSchema = z.object({
   level: safeString,
   start_year: z.number().catch(0),
   is_featured: z.boolean().catch(false),
+  // Controls whether the skill appears on the website at all.
+  show_in_website: z.boolean().catch(false),
   icons: iconsSchema,
 });
 
