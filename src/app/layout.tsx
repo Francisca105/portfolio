@@ -4,6 +4,7 @@ import { CustomCursor } from "@/components/custom-cursor";
 import { Footer } from "@/components/footer";
 import { MotionProvider } from "@/components/motion-provider";
 import { Navbar } from "@/components/navbar";
+import { ScrollProgress } from "@/components/scroll-progress";
 import { ThemeProvider } from "@/components/theme-provider";
 import "./globals.css";
 
@@ -64,6 +65,7 @@ export default function RootLayout({
         >
           <MotionProvider>
             <CustomCursor />
+            <ScrollProgress />
             <Navbar />
             <main className="pt-16">{children}</main>
             <Footer />
