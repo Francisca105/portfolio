@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Check, Copy } from "lucide-react";
+import { ArrowRight, Check, ChevronDown, Copy } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
@@ -11,6 +11,27 @@ interface HeroSectionProps {
   basics: Basics;
   narratives: Narratives;
 }
+
+const headingContainer = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.06, delayChildren: 0.15 },
+  },
+};
+
+const headingWord = {
+  hidden: { opacity: 0, y: 24, filter: "blur(4px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const },
+  },
+};
+
+const edgeWords = "Full-stack developer driven by technical challenges."
+  .split(" ")
+  .map((text) => ({ text, primary: false }));
 
 export function HeroSection({ basics, narratives }: HeroSectionProps) {
   const [copied, setCopied] = useState(false);
@@ -26,8 +47,24 @@ export function HeroSection({ basics, narratives }: HeroSectionProps) {
       {/* Background gradient */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+        <motion.div
+          animate={{
+            x: [0, 40, -25, 0],
+            y: [0, -30, 20, 0],
+            scale: [1, 1.15, 0.95, 1],
+          }}
+          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            x: [0, -35, 25, 0],
+            y: [0, 25, -30, 0],
+            scale: [1, 0.9, 1.1, 1],
+          }}
+          transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
+        />
       </div>
 
       <div className="max-w-4xl mx-auto text-center">
@@ -42,20 +79,33 @@ export function HeroSection({ basics, narratives }: HeroSectionProps) {
         </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
+          variants={headingContainer}
+          initial="hidden"
+          animate="visible"
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground text-balance"
         >
-          {"I'm "}
-          <span className="text-primary">{basics.name.first}</span>
-          {", Full-stack developer driven by technical challenges."}
+          {[
+            { text: "I'm", primary: false },
+            { text: `${basics.name.first},`, primary: true },
+            ...edgeWords,
+          ].map((word, index) => (
+            <motion.span
+              // biome-ignore lint/suspicious/noArrayIndexKey: static word list
+              key={index}
+              variants={headingWord}
+              className={`inline-block mr-[0.25em] ${
+                word.primary ? "text-primary" : ""
+              }`}
+            >
+              {word.text}
+            </motion.span>
+          ))}
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.55 }}
           className="mt-6 text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto text-pretty"
         >
           {narratives.short}
@@ -64,7 +114,7 @@ export function HeroSection({ basics, narratives }: HeroSectionProps) {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          transition={{ duration: 0.5, delay: 0.7 }}
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Button asChild size="lg" className="gap-2 group">
@@ -97,7 +147,7 @@ export function HeroSection({ basics, narratives }: HeroSectionProps) {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
+          transition={{ duration: 0.5, delay: 0.9 }}
           className="mt-16 flex items-center justify-center gap-6"
         >
           <a
@@ -130,6 +180,22 @@ export function HeroSection({ basics, narratives }: HeroSectionProps) {
           </a>
         </motion.div>
       </div>
+
+      {/* Scroll cue */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 1.4 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground"
+        aria-hidden="true"
+      >
+        <motion.div
+          animate={{ y: [0, 8, 0] }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
+        >
+          <ChevronDown className="h-6 w-6" />
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

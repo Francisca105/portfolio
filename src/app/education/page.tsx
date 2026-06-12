@@ -10,6 +10,7 @@ import {
   Rocket,
   Users,
 } from "lucide-react";
+import { ErrorState } from "@/components/error-state";
 import { Loading } from "@/components/loading";
 import { PageTransition } from "@/components/page-transition";
 import { Badge } from "@/components/ui/badge";
@@ -17,18 +18,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useData } from "@/hooks/use-data";
 
 export default function EducationPage() {
-  const { data, isLoading, isError } = useData();
+  const { data, isLoading, isError, retry } = useData();
 
   if (isLoading) return <Loading />;
-  if (isError || !data) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="text-muted-foreground">
-          Failed to load data. Please try again later.
-        </p>
-      </div>
-    );
-  }
+  if (isError || !data) return <ErrorState onRetry={retry} />;
 
   const formatDate = (dateStr: string | null) => {
     if (!dateStr) return "Present";
@@ -79,7 +72,7 @@ export default function EducationPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <Card className="border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 transition-colors">
+                  <Card className="border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10">
                     <CardHeader>
                       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                         <div>
@@ -197,7 +190,7 @@ export default function EducationPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <Card className="h-full border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 transition-colors">
+                  <Card className="h-full border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10">
                     <CardHeader>
                       <Badge
                         variant="outline"
@@ -270,7 +263,7 @@ export default function EducationPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <Card className="border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 transition-colors">
+                  <Card className="border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10">
                     <CardHeader>
                       <div className="flex items-start justify-between">
                         <div>

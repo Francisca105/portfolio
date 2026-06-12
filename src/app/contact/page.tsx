@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Check, Copy, Github, Linkedin, Mail, MapPin } from "lucide-react";
 import { useState } from "react";
 import { MapSection } from "@/components/contact/map-section";
+import { ErrorState } from "@/components/error-state";
 import { Loading } from "@/components/loading";
 import { PageTransition } from "@/components/page-transition";
 import { Button } from "@/components/ui/button";
@@ -11,7 +12,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useData } from "@/hooks/use-data";
 
 export default function ContactPage() {
-  const { data, isLoading, isError } = useData();
+  const { data, isLoading, isError, retry } = useData();
   const [copied, setCopied] = useState(false);
 
   const copyEmail = async () => {
@@ -23,15 +24,7 @@ export default function ContactPage() {
   };
 
   if (isLoading) return <Loading />;
-  if (isError || !data) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="text-muted-foreground">
-          Failed to load data. Please try again later.
-        </p>
-      </div>
-    );
-  }
+  if (isError || !data) return <ErrorState onRetry={retry} />;
 
   return (
     <PageTransition>

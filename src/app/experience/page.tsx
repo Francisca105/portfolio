@@ -1,7 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useSpring } from "framer-motion";
 import { Briefcase, Calendar, MapPin } from "lucide-react";
+import { useRef } from "react";
+import { ErrorState } from "@/components/error-state";
 import { Loading } from "@/components/loading";
 import { PageTransition } from "@/components/page-transition";
 import { Badge } from "@/components/ui/badge";
@@ -9,18 +11,20 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useData } from "@/hooks/use-data";
 
 export default function ExperiencePage() {
-  const { data, isLoading, isError } = useData();
+  const { data, isLoading, isError, retry } = useData();
+
+  const timelineRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: timelineRef,
+    offset: ["start 0.8", "end 0.5"],
+  });
+  const lineProgress = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+  });
 
   if (isLoading) return <Loading />;
-  if (isError || !data) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <p className="text-muted-foreground">
-          Failed to load data. Please try again later.
-        </p>
-      </div>
-    );
-  }
+  if (isError || !data) return <ErrorState onRetry={retry} />;
 
   const formatDate = (dateStr: string | null) => {
     if (!dateStr) return "Present";
@@ -51,9 +55,13 @@ export default function ExperiencePage() {
           </motion.div>
 
           {/* Timeline */}
-          <div className="relative">
-            {/* Timeline line */}
+          <div className="relative" ref={timelineRef}>
+            {/* Timeline line, drawn as the user scrolls */}
             <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2" />
+            <motion.div
+              style={{ scaleY: lineProgress }}
+              className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-primary origin-top md:-translate-x-1/2"
+            />
 
             {data.experience.industry.map((exp, index) => (
               <motion.div
@@ -74,7 +82,7 @@ export default function ExperiencePage() {
                 <Card
                   className={`ml-0 ${
                     index % 2 === 0 ? "md:mr-8" : "md:ml-8"
-                  } border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 transition-colors`}
+                  } border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10`}
                 >
                   <CardHeader>
                     <div
