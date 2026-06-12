@@ -37,14 +37,14 @@ export default function ExperiencePage() {
 
   return (
     <PageTransition>
-      <div className="min-h-screen py-24 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground">
               Industry Experience

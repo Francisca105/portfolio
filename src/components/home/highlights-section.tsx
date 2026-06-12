@@ -11,14 +11,14 @@ interface HighlightsSectionProps {
 
 export function HighlightsSection({ highlights }: HighlightsSectionProps) {
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+    <section className="py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-secondary/30">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground">
             Impact Highlights

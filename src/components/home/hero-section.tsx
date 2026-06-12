@@ -214,7 +214,7 @@ export function HeroSection({ basics, narratives }: HeroSectionProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 1.4 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-muted-foreground hidden sm:block"
         aria-hidden="true"
       >
         <motion.div

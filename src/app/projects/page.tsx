@@ -46,14 +46,14 @@ export default function ProjectsPage() {
 
   return (
     <PageTransition>
-      <div className="min-h-screen py-24 px-4 sm:px-6 lg:px-8">
+      <div className="min-h-screen py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-16"
+            className="text-center mb-10 sm:mb-16"
           >
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground">
               Projects & Contributions
@@ -95,10 +95,10 @@ export default function ProjectsPage() {
                         setSelectedProject(project);
                       }
                     }}
-                    className="h-full cursor-pointer border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10"
+                    className="h-full cursor-pointer border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10 active:scale-[0.98]"
                   >
                     <CardHeader>
-                      <div className="flex items-start justify-between">
+                      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                         <div>
                           <Badge
                             variant="outline"
@@ -113,7 +113,7 @@ export default function ProjectsPage() {
                             {project.role}
                           </p>
                         </div>
-                        <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                        <div className="flex items-center gap-2 text-sm text-muted-foreground shrink-0">
                           <Calendar className="h-4 w-4" />
                           {formatDate(project.start)} -{" "}
                           {project.is_current

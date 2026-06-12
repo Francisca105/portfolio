@@ -14,7 +14,7 @@ export function MapSection() {
     resolvedTheme === "dark" ? "grayscale(100%) invert(90%)" : "grayscale(20%)";
 
   return (
-    <div className="w-full h-[400px] rounded-xl overflow-hidden border border-purple-500/20 shadow-lg">
+    <div className="w-full h-[260px] sm:h-[400px] rounded-xl overflow-hidden border border-purple-500/20 shadow-lg">
       <iframe
         width="100%"
         height="100%"
