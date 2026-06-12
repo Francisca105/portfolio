@@ -1,9 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Check, ChevronDown, Copy } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import type { Basics, Narratives } from "@/types/portfolio";
 
@@ -36,6 +36,18 @@ const edgeWords = "Full-stack developer driven by technical challenges."
 export function HeroSection({ basics, narratives }: HeroSectionProps) {
   const [copied, setCopied] = useState(false);
 
+  // Parallax: as the hero scrolls out, the content drifts down and fades
+  // while the background blobs move at different speeds for depth.
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, 120]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+  const blobOneY = useTransform(scrollYProgress, [0, 1], [0, -160]);
+  const blobTwoY = useTransform(scrollYProgress, [0, 1], [0, 100]);
+
   const copyEmail = async () => {
     await navigator.clipboard.writeText(basics.contact.email);
     setCopied(true);
@@ -43,31 +55,47 @@ export function HeroSection({ basics, narratives }: HeroSectionProps) {
   };
 
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden"
+    >
       {/* Background gradient */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
         <motion.div
-          animate={{
-            x: [0, 40, -25, 0],
-            y: [0, -30, 20, 0],
-            scale: [1, 1.15, 0.95, 1],
-          }}
-          transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
-        />
+          style={{ y: blobOneY }}
+          className="absolute top-1/4 left-1/4"
+        >
+          <motion.div
+            animate={{
+              x: [0, 40, -25, 0],
+              y: [0, -30, 20, 0],
+              scale: [1, 1.15, 0.95, 1],
+            }}
+            transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+            className="w-96 h-96 bg-primary/10 rounded-full blur-3xl"
+          />
+        </motion.div>
         <motion.div
-          animate={{
-            x: [0, -35, 25, 0],
-            y: [0, 25, -30, 0],
-            scale: [1, 0.9, 1.1, 1],
-          }}
-          transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"
-        />
+          style={{ y: blobTwoY }}
+          className="absolute bottom-1/4 right-1/4"
+        >
+          <motion.div
+            animate={{
+              x: [0, -35, 25, 0],
+              y: [0, 25, -30, 0],
+              scale: [1, 0.9, 1.1, 1],
+            }}
+            transition={{ duration: 22, repeat: Infinity, ease: "easeInOut" }}
+            className="w-96 h-96 bg-primary/5 rounded-full blur-3xl"
+          />
+        </motion.div>
       </div>
 
-      <div className="max-w-4xl mx-auto text-center">
+      <motion.div
+        style={{ y: contentY, opacity: contentOpacity }}
+        className="max-w-4xl mx-auto text-center"
+      >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -179,7 +207,7 @@ export function HeroSection({ basics, narratives }: HeroSectionProps) {
             </svg>
           </a>
         </motion.div>
-      </div>
+      </motion.div>
 
       {/* Scroll cue */}
       <motion.div
