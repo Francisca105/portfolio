@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-04-07",
+    "last_updated": "2026-06-12",
     "author": "Francisca Almeida",
     "language": "en"
   },
@@ -58,7 +58,10 @@
             "start": "2026-05",
             "end": null,
             "is_current": true,
-            "description": ""
+            "description": "Focused on migration testing and, with agents, automating tests (planning, execution and reporting).",
+            "proof_of_competence": {
+              "stack": ["Python", "Odoo", "PostgreSQL", "XML"]
+            }
           }
         ]
       },
@@ -74,7 +77,6 @@
             "is_current": false,
             "description": "Automated Excel-based workflows using a custom dashboard built with Docker, Next.js, and SQL. Improved scalability and usability of internal data operations.",
             "proof_of_competence": {
-              "impact": "Workflow digitalization and automation",
               "stack": ["Docker", "Next.js", "SQL", "FastAPI"]
             }
           }
@@ -108,7 +110,6 @@
             "is_current": true,
             "description": "Designing and implementing a digital system to automate academic administrative processes. Collaborating with administrative staff to modernize workflows and integrating backend with internal platforms.",
             "proof_of_competence": {
-              "impact": "Process automation for thousands of potential users (IST students)",
               "scope": "System architecture"
             }
           }
@@ -189,8 +190,7 @@
               "Recruited and trained new technical members."
             ],
             "proof_of_competence": {
-              "scale": "220+ orders processed",
-              "impact": "End-to-end e-commerce solution for the student nucleus"
+              "scale": "220+ orders processed"
             }
           }
         ]
@@ -244,7 +244,13 @@
       "start": "2024-11",
       "end": "2025-02",
       "description": "Developed an online merchandise store for NEIIST to support the student community. Designed for future expansion to include stickers and other products.",
-      "technologies": ["React", "Create-React-App", "PostgreSQL", "JavaScript", "Exceljs"],
+      "technologies": [
+        "React",
+        "Create-React-App",
+        "PostgreSQL",
+        "JavaScript",
+        "Exceljs"
+      ],
       "proof_of_competence": {
         "metrics": {
           "badge": "220+ orders processed"
@@ -263,7 +269,14 @@
       "end": "2026-04",
       "is_current": true,
       "description": "Led the complete architectural rebuild and modernization of the official SINFO website. Focused on improving developer experience, system maintainability, and implementing a robust digital analytics infrastructure.",
-      "technologies": ["Next.js", "React", "TypeScript", "Tailwind CSS", "Figma", "Grafana"],
+      "technologies": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Figma",
+        "Grafana"
+      ],
       "proof_of_competence": {
         "metrics": {
           "badge": "14.3k+ visits during the event month",
@@ -286,7 +299,6 @@
       "date": "2025-05",
       "description": "Contributed to Inbox Zero by improving UI consistency and addressing accessibility concerns in the task management interface.",
       "proof_of_competence": {
-        "impact": "UI Consistency & Accessibility improvements",
         "status": "Merged"
       },
       "links": {
@@ -300,7 +312,6 @@
       "date": "2026-02",
       "description": "Resolved a critical state rendering bug in the student-led schedule builder where timetable lessons would intermittently disappear. Fixed the identification logic by replacing non-unique class name identifiers with unique IDs, eliminating rendering collisions during view updates and filter changes.",
       "proof_of_competence": {
-        "impact": "Fixed state sync & item collisions in timetable rendering",
         "status": "Merged"
       },
       "links": {
@@ -311,7 +322,10 @@
   "skills": {
     "languages": [
       { "name": "Portuguese", "level": "Native" },
-      { "name": "English", "level": "Advanced (C1 listening/reading, B2 speaking, B1 writing)" },
+      {
+        "name": "English",
+        "level": "Advanced (C1 listening/reading, B2 speaking, B1 writing)"
+      },
       { "name": "Spanish", "level": "B2" }
     ],
     "technical": [
