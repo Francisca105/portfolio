@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Parallax } from "@/components/parallax";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { StarHighlight } from "@/types/portfolio";
 
@@ -27,7 +28,7 @@ export function HighlightsSection({ highlights }: HighlightsSectionProps) {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <Parallax offset={30} className="grid md:grid-cols-2 gap-6">
           {highlights.map((highlight, index) => (
             <motion.div
               key={highlight.id}
@@ -71,7 +72,7 @@ export function HighlightsSection({ highlights }: HighlightsSectionProps) {
               </Card>
             </motion.div>
           ))}
-        </div>
+        </Parallax>
       </div>
     </section>
   );
