@@ -8,7 +8,7 @@ interface SkillIconProps {
   icons: {
     light: string;
     dark: string;
-  };
+  } | null;
   name: string;
   size?: number;
 }
@@ -21,6 +21,20 @@ export function SkillIcon({ icons, name, size = 24 }: SkillIconProps) {
     setMounted(true);
   }, []);
 
+  // Some skills have no icon — render a neutral placeholder with the
+  // skill's initial instead of crashing.
+  if (!icons || (!icons.light && !icons.dark)) {
+    return (
+      <div
+        className="flex items-center justify-center rounded bg-muted text-[10px] font-semibold text-muted-foreground"
+        style={{ width: size, height: size }}
+        aria-hidden="true"
+      >
+        {name.charAt(0).toUpperCase()}
+      </div>
+    );
+  }
+
   if (!mounted) {
     return (
       <div
@@ -30,7 +44,10 @@ export function SkillIcon({ icons, name, size = 24 }: SkillIconProps) {
     );
   }
 
-  const iconUrl = resolvedTheme === "dark" ? icons.dark : icons.light;
+  const iconUrl =
+    resolvedTheme === "dark"
+      ? icons.dark || icons.light
+      : icons.light || icons.dark;
 
   return (
     <Image
