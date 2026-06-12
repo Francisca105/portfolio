@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { CustomCursor } from "@/components/custom-cursor";
+import { Footer } from "@/components/footer";
 import { MotionProvider } from "@/components/motion-provider";
 import { Navbar } from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -61,8 +63,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <MotionProvider>
+            <CustomCursor />
             <Navbar />
             <main className="pt-16">{children}</main>
+            <Footer />
           </MotionProvider>
         </ThemeProvider>
       </body>

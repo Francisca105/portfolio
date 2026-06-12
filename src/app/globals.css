@@ -108,3 +108,17 @@
 .dark .glass-border {
   border: 1px solid rgba(168, 85, 247, 0.15);
 }
+
+/* Custom cursor: hide the native cursor only while the custom one is mounted
+   (fine pointers only — the class is added by the CustomCursor component). */
+@media (pointer: fine) {
+  .custom-cursor-active,
+  .custom-cursor-active * {
+    cursor: none;
+  }
+}
+
+/* Themed text selection */
+::selection {
+  background: color-mix(in srgb, var(--primary) 30%, transparent);
+}
