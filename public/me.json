@@ -365,7 +365,7 @@
         "level": "Advanced",
         "start_year": 2022,
         "is_featured": true,
-        "show_in_website": false,
+        "show_in_website": true,
         "icons": {
           "light": "https://skillicons.dev/icons?i=py&theme=light",
           "dark": "https://skillicons.dev/icons?i=py&theme=dark"
@@ -617,7 +617,7 @@
         "level": "Intermediate",
         "start_year": 2024,
         "is_featured": true,
-        "show_in_website": false,
+        "show_in_website": true,
         "icons": {
           "light": "https://skillicons.dev/icons?i=postgres&theme=light",
           "dark": "https://skillicons.dev/icons?i=postgres&theme=dark"

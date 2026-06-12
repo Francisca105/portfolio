@@ -152,3 +152,38 @@ html {
   border: 2px solid transparent;
   background-clip: content-box;
 }
+
+/* Skills marquee: infinite horizontal loop, pauses on hover, faded edges.
+   The track holds two identical halves; sliding -50% loops seamlessly. */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee var(--marquee-duration, 30s) linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-mask {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 12%,
+    black 88%,
+    transparent
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
