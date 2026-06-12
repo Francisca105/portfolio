@@ -8,17 +8,21 @@ import {
   Github,
   GitPullRequest,
 } from "lucide-react";
+import { useState } from "react";
 import { ErrorState } from "@/components/error-state";
 import { Loading } from "@/components/loading";
 import { PageTransition } from "@/components/page-transition";
+import { ProjectDialog } from "@/components/projects/project-dialog";
 import { SkillIcon } from "@/components/skill-icon";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useData } from "@/hooks/use-data";
+import type { Project } from "@/types/portfolio";
 
 export default function ProjectsPage() {
   const { data, isLoading, isError, retry } = useData();
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   if (isLoading) return <Loading />;
   if (isError || !data) return <ErrorState onRetry={retry} />;
@@ -79,7 +83,20 @@ export default function ProjectsPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
-                  <Card className="h-full border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10">
+                  {/* biome-ignore lint/a11y/useSemanticElements: the card contains nested links, which are invalid inside a native button */}
+                  <Card
+                    role="button"
+                    tabIndex={0}
+                    data-cursor="pointer"
+                    onClick={() => setSelectedProject(project)}
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        setSelectedProject(project);
+                      }
+                    }}
+                    className="h-full cursor-pointer border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10"
+                  >
                     <CardHeader>
                       <div className="flex items-start justify-between">
                         <div>
@@ -150,6 +167,7 @@ export default function ProjectsPage() {
                                 href={project.links.github}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
                               >
                                 <Github className="h-4 w-4 mr-2" />
                                 Code
@@ -162,6 +180,7 @@ export default function ProjectsPage() {
                                 href={project.links.live}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
                               >
                                 <ExternalLink className="h-4 w-4 mr-2" />
                                 Live
@@ -253,6 +272,13 @@ export default function ProjectsPage() {
           </section>
         </div>
       </div>
+
+      <ProjectDialog
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+        getSkillIcon={getSkillIcon}
+        formatDate={formatDate}
+      />
     </PageTransition>
   );
 }
