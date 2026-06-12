@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Download, Menu, Moon, Sun, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -121,40 +121,43 @@ export function Navbar() {
         </div>
 
         {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden border-t border-border py-4"
-          >
-            <div className="flex flex-col gap-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={cn(
-                    "px-3 py-2 text-sm font-medium rounded-lg transition-colors",
-                    pathname === link.href
-                      ? "text-primary bg-primary/10"
-                      : "text-muted-foreground hover:text-foreground hover:bg-secondary",
-                  )}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.25, ease: "easeInOut" }}
+              className="md:hidden border-t border-border overflow-hidden"
+            >
+              <div className="flex flex-col gap-2 py-4">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={cn(
+                      "px-3 py-2 text-sm font-medium rounded-lg transition-colors",
+                      pathname === link.href
+                        ? "text-primary bg-primary/10"
+                        : "text-muted-foreground hover:text-foreground hover:bg-secondary",
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+                <a
+                  href="https://raw.githubusercontent.com/Francisca105/Francisca105/refs/heads/main/cv.pdf"
+                  download
+                  className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-primary"
                 >
-                  {link.label}
-                </Link>
-              ))}
-              <a
-                href="https://raw.githubusercontent.com/Francisca105/Francisca105/refs/heads/main/cv.pdf"
-                download
-                className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-primary"
-              >
-                <Download className="h-4 w-4" />
-                Download CV
-              </a>
-            </div>
-          </motion.div>
-        )}
+                  <Download className="h-4 w-4" />
+                  Download CV
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
     </motion.header>
   );
