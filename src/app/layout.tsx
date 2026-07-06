@@ -19,6 +19,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://falmeida.dev"),
   title: "Francisca Almeida | Software Engineer",
   description: "Software Engineer and CS Master's student at IST.",
   keywords: [
