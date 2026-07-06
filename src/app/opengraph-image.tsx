@@ -1,5 +1,8 @@
 import { ImageResponse } from "next/og";
 
+// Required for static export (GitHub Pages): this image has no dynamic
+// params, so it can be generated once at build time.
+export const dynamic = "force-static";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
