@@ -1,15 +1,13 @@
-"use client";
-
 import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
-import { useData } from "@/hooks/use-data";
+import { getPortfolioData } from "@/lib/get-portfolio-data";
 
 export function Footer() {
-  const { data } = useData();
+  const data = getPortfolioData();
 
-  const github = data?.basics.links.github;
-  const linkedin = data?.basics.links.linkedin;
-  const email = data?.basics.contact.email;
+  const github = data.basics.links.github;
+  const linkedin = data.basics.links.linkedin;
+  const email = data.basics.contact.email;
 
   return (
     <footer className="border-t border-border/50 bg-secondary/20">
