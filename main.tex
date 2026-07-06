@@ -1,0 +1,199 @@
+%-------------------------
+% Resume in Latex
+% Author : Francisca Almeida
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+\input{glyphtounicode}
+
+% Accent color matches falmeida.dev's theme (--primary, dark mode)
+\definecolor{accent}{HTML}{A855F7}
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\bfseries\raggedright\large\color{accent}
+}{}{0em}{}[\color{accent}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge Francisca \textcolor{accent}{Almeida}} \\ \vspace{1pt}
+    \small Lisbon, Portugal $|$ 
+    \href{mailto:francisca04almeida@outlook.com}{\underline{francisca04almeida@outlook.com}} $|$ 
+    \href{https://falmeida.dev}{\underline{falmeida.dev}} $|$
+    \href{https://github.com/Francisca105}{\faGithub \hspace{1pt} \underline{francisca105}} $|$
+    \href{https://www.linkedin.com/in/francisca-105-almeida/}{\faLinkedin \hspace{1pt} \underline{francisca-105-almeida}}
+\end{center}
+
+\small{Full-stack developer experienced in building scalable web applications and transitioning manual workflows into automated architectures. Strong foundation in backend systems, DevOps tooling, and technical leadership.}
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Instituto Superior Técnico}{Lisbon, Portugal}
+      {Master of Science in Computer Science and Engineering}{Sept. 2025 -- Present}
+    \resumeSubheading
+      {Instituto Superior Técnico}{Lisbon, Portugal}
+      {Bachelor of Science in Computer Science and Engineering}{Sept. 2022 -- July 2025}
+      \resumeItemListStart
+        \resumeItem{\textbf{Year Delegate} (2022 -- 2024): represented students in academic councils; re-elected in the 2nd year with the \textbf{highest number of votes} among all students at the college.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    % \resumeSubheading
+    %   {Full-Stack Developer (Scholarship)}{June 2025 -- Present}
+    %   {DSI Instituto Superior Técnico}{Lisbon, Portugal}
+    %   \resumeItemListStart
+    %     \resumeItem{Architected a digital system using a \textbf{Java and Spring Boot state machine} to automate academic course withdrawal processes for thousands of potential users.}
+    %     \resumeItem{Modernized legacy manual workflows by collaborating with administrative staff to design \textbf{RESTful APIs} and integrate with existing internal university platforms.}
+    %     \resumeItem{\textcolor{accent}{\textbf{Stack:}} Java, Spring Boot, SQL, REST APIs, System Architecture.}
+    %   \resumeItemListEnd
+
+    \resumeSubheading
+      {Developer}{May 2026 -- Present}
+      {ThinkOpen Solutions}{Lisbon, Portugal}
+      \resumeItemListStart
+        \resumeItem{Developer on the \textbf{Odoo migrations} team, focused primarily on testing with additional production support across the full migration lifecycle.}
+        \resumeItem{Executed \textbf{go-lives}, pre-production environment setup, module upgrades, testing, and bug fixing for Odoo migration projects.}
+        \resumeItem{Automating test planning, execution, and reporting workflows using \textbf{AI agents}.}
+        \resumeItem{\textcolor{accent}{\textbf{Stack:}} Python, Odoo, PostgreSQL, XML.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Data Management Intern}{Aug. 2024 -- Nov. 2024}
+      {Micro Harvest}{Lisbon, Portugal}
+      \resumeItemListStart
+        \resumeItem{Architected and deployed a centralized internal dashboard that slashed data processing latency for the operations team by automating Excel-based workflows.}
+        \resumeItem{Developed custom data entry and report generation modules, significantly improving \textbf{scalability and usability} of internal data operations.}
+        \resumeItem{\textcolor{accent}{\textbf{Stack:}} Next.js, FastAPI, Docker, SQL, Python.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------EXTRACURRICULAR ACTIVITIES-----------
+\section{Extracurricular Activities}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{SINFO (Tech Conference)} $|$ \emph{Full-Stack Developer \& Team Leader}}{May 2024 -- Present}
+          \resumeItemListStart
+            \resumeItem{Led the development team in maintaining the official web app for \textbf{1400+ users}; integrated \textbf{Grafana} dashboards for real-time attendee analytics.}
+            \resumeItem{Led the complete architectural rebuild of the official SINFO website (\textbf{Next.js, TypeScript}), reaching \textbf{14.3k+ visits} during the event month and 6,000+ visits/month since; engineered a custom referral-tracking system integrated with Grafana for real-time marketing attribution.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Web.Dev (AeroTéc)} $|$ \emph{Web Developer \& Coordinator}}{Oct. 2023 -- Aug. 2025}
+          \resumeItemListStart
+            \resumeItem{Coordinated technical workshops and built internal recruitment/admin tools using \textbf{Express.js} and \textbf{MongoDB}.}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{NEIIST (CS Student Org)} $|$ \emph{Web Developer \& Coordinator}}{Mar. 2024 -- Aug. 2025}
+          \resumeItemListStart
+            \resumeItem{Developed an end-to-end e-commerce merch sales page (\textbf{React/PostgreSQL}) that processed over \textbf{220 customer orders}.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------OPEN SOURCE CONTRIBUTIONS-----------
+\section{Open Source}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{Inbox Zero} $|$ \href{https://github.com/elie222/inbox-zero/pull/390}{\emph{Pull Request (Merged)}}}{May 2025}
+          \resumeItemListStart
+            \resumeItem{Improved UI consistency and addressed accessibility concerns in the task management interface.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: TypeScript, JavaScript, Python, Java, C/C++, SQL} \\
+     \textbf{Frameworks}{: Next.js, React, Node.js, Express.js, Vue.js, FastAPI, Spring Boot, Tailwind CSS} \\
+     \textbf{Tools \& Concepts}{: Docker, Git, Grafana, Figma, REST APIs, CI/CD, Agile (Scrum)} \\
+     \textbf{Databases}{: MongoDB, MySQL, PostgreSQL, Firebase}
+    }}
+ \end{itemize}
+%-------------------------------------------
+\section{Languages}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Portuguese}{: Native} \\
+     \textbf{English}{: Full Professional Proficiency (C1)} \\
+     % \textbf{Spanish}{: Upper Intermediate (B2)} 
+    }}
+ \end{itemize}
+ 
+\end{document}
