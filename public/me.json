@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-06-12",
+    "last_updated": "2026-07-06",
     "author": "Francisca Almeida",
     "language": "en"
   },
@@ -54,11 +54,19 @@
         "location": "Lisbon, Portugal",
         "roles": [
           {
-            "title": "Software Developer (Odoo/Python)",
+            "title": "Developer",
             "start": "2026-05",
             "end": null,
             "is_current": true,
-            "description": "Focused on migration testing and, with agents, automating tests (planning, execution and reporting).",
+            "description": "Developer on the Odoo migrations team, focused primarily on testing with additional production support across the full migration lifecycle.",
+            "highlights": [
+              "Executed go-lives for Odoo migration projects.",
+              "Set up pre-production environments for migration testing.",
+              "Updated and validated Odoo modules across migrated instances.",
+              "Performed testing and bug fixing throughout the migration process.",
+              "Provided production support alongside migration duties.",
+              "Automating test planning, execution, and reporting workflows using AI agents."
+            ],
             "proof_of_competence": {
               "stack": ["Python", "Odoo", "PostgreSQL", "XML"]
             }
@@ -90,11 +98,11 @@
         "project": "FUTURE@DEI",
         "roles": [
           {
-            "title": "Teaching Assistant",
+            "title": "Teaching Assistant (FUTURE@DEI)",
             "start": "2026-04",
             "end": "2026-08",
             "is_current": true,
-            "description": "Selected for a specialized role supporting academic operations within the Computer Science department."
+            "description": "Contracted as a Teaching Assistant (an administrative arrangement rather than a scholarship) while working on the FUTURE@DEI initiative. Responsible for identifying and organizing candidate student projects to be featured in the department's project \"museum\", a permanent showcase of notable CS work."
           }
         ]
       },
@@ -107,7 +115,7 @@
             "title": "Full-Stack Developer (Scholarship)",
             "start": "2025-06",
             "end": "2026-05",
-            "is_current": true,
+            "is_current": false,
             "description": "Designing and implementing a digital system to automate academic administrative processes. Collaborating with administrative staff to modernize workflows and integrating backend with internal platforms.",
             "proof_of_competence": {
               "scope": "System architecture"
