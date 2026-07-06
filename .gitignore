@@ -40,7 +40,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# LaTeX build artifacts (main.tex compiles to public/cv.pdf)
+# LaTeX cv source (kept locally only; public/cv.pdf is the shipped artifact)
+/main.tex
 *.aux
 *.log
 *.out
