@@ -305,8 +305,18 @@
       ],
       "image": {
         "src": "/projects/neiist-store.jpg",
-        "alt": "NEIIST merch store page"
+        "alt": "NEIIST store product page with size picker and add-to-cart"
       },
+      "gallery": [
+        {
+          "src": "/projects/neiist-store-admin.jpg",
+          "alt": "Admin order search with order status and totals"
+        },
+        {
+          "src": "/projects/neiist-store-checkout.jpg",
+          "alt": "Checkout form with order summary"
+        }
+      ],
       "proof_of_competence": {
         "metrics": {
           "badge": "220+ orders processed"

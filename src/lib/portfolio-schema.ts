@@ -56,14 +56,13 @@ const linksSchema = z
   .optional()
   .catch(undefined);
 
-const imageSchema = z
-  .object({
-    // Path under /public, e.g. "/projects/sinfo.jpg".
-    src: safeString,
-    alt: safeString,
-  })
-  .optional()
-  .catch(undefined);
+const imageObjectSchema = z.object({
+  // Path under /public, e.g. "/projects/sinfo.jpg".
+  src: safeString,
+  alt: safeString,
+});
+
+const imageSchema = imageObjectSchema.optional().catch(undefined);
 
 const roleSchema = z.object({
   title: safeString,
@@ -214,6 +213,8 @@ const projectSchema = z.object({
   result: optionalString,
   technologies: safeStringArray,
   image: imageSchema,
+  // Extra screenshots shown after the cover image in the project dialog.
+  gallery: z.array(imageObjectSchema).catch([]),
   proof_of_competence: proofOfCompetenceSchema,
   links: linksSchema,
 });
@@ -271,7 +272,7 @@ export type ProofOfCompetence = NonNullable<
   z.infer<typeof proofOfCompetenceSchema>
 >;
 export type ProjectLinks = NonNullable<z.infer<typeof linksSchema>>;
-export type ProjectImage = NonNullable<z.infer<typeof imageSchema>>;
+export type ProjectImage = z.infer<typeof imageObjectSchema>;
 export type Role = z.infer<typeof roleSchema>;
 export type IndustryExperience = z.infer<typeof industryExperienceSchema>;
 export type UniversityRole = z.infer<typeof universityRoleSchema>;

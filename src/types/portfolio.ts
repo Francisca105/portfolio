@@ -14,6 +14,8 @@ export type {
   OpenSource,
   PortfolioData,
   Project,
+  ProjectImage,
+  ProjectLinks,
   ProofOfCompetence,
   Role,
   Skills,

@@ -7,7 +7,7 @@ import {
   Github,
   User,
 } from "lucide-react";
-import Image from "next/image";
+import { ProjectGallery } from "@/components/projects/project-gallery";
 import { SkillIcon } from "@/components/skill-icon";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -19,7 +19,6 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { formatMonth } from "@/lib/format-date";
-import { assetPath } from "@/lib/paths";
 import type { Icons, Project } from "@/types/portfolio";
 
 interface ProjectDialogProps {
@@ -52,22 +51,13 @@ export function ProjectDialog({
       <DialogContent className="max-w-[calc(100%-2rem)] sm:max-w-2xl max-h-[85vh] overflow-y-auto">
         {project && (
           <>
-            {project.image && (
-              // The wrapper keeps the aspect-ratio box from being a direct
-              // grid item of the dialog: a stretched grid item ignores its
-              // aspect ratio, collapses its row and overlaps the text below.
-              <div>
-                <div className="relative aspect-video overflow-hidden rounded-lg border border-border/50 bg-secondary/30">
-                  <Image
-                    src={assetPath(project.image.src)}
-                    alt={project.image.alt}
-                    fill
-                    sizes="(min-width: 640px) 42rem, 100vw"
-                    className="object-cover object-top"
-                  />
-                </div>
-              </div>
-            )}
+            <ProjectGallery
+              key={project.title}
+              images={[
+                ...(project.image ? [project.image] : []),
+                ...project.gallery,
+              ]}
+            />
 
             <DialogHeader>
               <Badge
