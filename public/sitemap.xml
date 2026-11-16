@@ -2,49 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://falmeida.dev/</loc>
-    <lastmod>2026-04-07T00:00:00+00:00</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <priority>1.0</priority>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://falmeida.dev/projects</loc>
-    <lastmod>2026-04-07T00:00:00+00:00</lastmod>
-    <priority>0.5</priority>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
   </url>
   <url>
     <loc>https://falmeida.dev/experience</loc>
-    <lastmod>2026-04-07T00:00:00+00:00</lastmod>
-    <priority>0.5</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://falmeida.dev/education</loc>
-    <lastmod>2026-04-07T00:00:00+00:00</lastmod>
-    <priority>0.5</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-  <url>
-    <loc>https://falmeida.dev/contact</loc>
-    <lastmod>2026-04-07T00:00:00+00:00</lastmod>
-    <priority>0.5</priority>
-    <changefreq>weekly</changefreq>
-  </url>
-
-  <!-- Project links -->
-  <url>
-    <loc>https://github.com/Francisca105/neiist-website/tree/feature/new-shop</loc>
-    <lastmod>2026-04-07T00:00:00+00:00</lastmod>
+    <lastmod>2026-11-15</lastmod>
     <priority>0.6</priority>
     <changefreq>monthly</changefreq>
   </url>
-
-  <!-- Open source contributions -->
   <url>
-    <loc>https://github.com/elie222/inbox-zero/pull/390</loc>
-    <lastmod>2026-04-07T00:00:00+00:00</lastmod>
-    <priority>0.4</priority>
+    <loc>https://falmeida.dev/education</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.5</priority>
     <changefreq>monthly</changefreq>
   </url>
-
+  <url>
+    <loc>https://falmeida.dev/contact</loc>
+    <lastmod>2026-11-15</lastmod>
+    <priority>0.5</priority>
+    <changefreq>yearly</changefreq>
+  </url>
 </urlset>
