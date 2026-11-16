@@ -18,10 +18,20 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
 });
 
+const SITE_NAME = "Francisca Almeida";
+const DEFAULT_TITLE = "Francisca Almeida | Software Engineer";
+const OG_IMAGE = "https://falmeida.dev/og-image.png";
+const DESCRIPTION =
+  "Full-stack software engineer in Lisbon (TypeScript, Next.js, Python, PostgreSQL): Odoo ERP migrations, the SINFO website rebuild and open-source work.";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://falmeida.dev"),
-  title: "Francisca Almeida | Software Engineer",
-  description: "Software Engineer and CS Master's student at IST.",
+  title: {
+    default: DEFAULT_TITLE,
+    // Pages export their own title (e.g. "Projects") and get the suffix.
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: DESCRIPTION,
   keywords: [
     "Francisca Almeida",
     "Software Engineer",
@@ -32,19 +42,31 @@ export const metadata: Metadata = {
     "Next.js",
     "TypeScript",
   ],
-  authors: [{ name: "Francisca Almeida" }],
-  creator: "Francisca Almeida",
+  authors: [{ name: SITE_NAME }],
+  creator: SITE_NAME,
+  // "./" resolves against the current route, so every page gets its own
+  // canonical URL on falmeida.dev even when served from GitHub Pages.
+  alternates: { canonical: "./" },
+  // The preview image is an absolute URL on purpose: a file-convention
+  // opengraph-image would be prefixed with the GitHub Pages base path and
+  // served without an image content type.
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "Francisca Almeida | Software Engineer",
-    description: "Software Engineer and CS Master's student at IST.",
     siteName: "Francisca Almeida Portfolio",
+    url: "./",
+    images: [
+      {
+        url: OG_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "Francisca Almeida, Software Engineer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Francisca Almeida | Software Engineer",
-    description: "Software Engineer and CS Master's student at IST.",
+    images: [OG_IMAGE],
   },
 };
 
