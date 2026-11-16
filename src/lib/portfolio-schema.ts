@@ -122,6 +122,7 @@ const narrativesSchema = z
     headline: safeString,
     headline_emphasis: optionalString,
     short: safeString,
+    // Paragraphs separated by blank lines, rendered in the About section.
     detailed: safeString,
     // Primary hero button; falls back to "View Projects" -> /projects.
     cta: ctaSchema,

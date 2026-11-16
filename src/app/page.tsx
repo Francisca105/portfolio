@@ -1,3 +1,4 @@
+import { AboutSection } from "@/components/home/about-section";
 import { HeroSection } from "@/components/home/hero-section";
 import { HighlightsSection } from "@/components/home/highlights-section";
 import { SkillsSection } from "@/components/home/skills-section";
@@ -11,6 +12,7 @@ export default function HomePage() {
     <PageTransition>
       <div className="min-h-screen">
         <HeroSection basics={data.basics} narratives={data.narratives} />
+        <AboutSection data={data} />
         <HighlightsSection highlights={data.narratives.star_highlights} />
         <SkillsSection skills={data.skills} />
       </div>
