@@ -11,7 +11,9 @@
   --card-foreground: #1f1114;
   --popover: #ffffff;
   --popover-foreground: #1f1114;
-  --primary: #ec4899;
+  /* pink-700: 5.7:1 on the page background and 6:1 under white button
+     text, so links, labels and buttons pass WCAG AA (pink-500 was 3.4:1). */
+  --primary: #be185d;
   --primary-foreground: #ffffff;
   --secondary: #fff0f5;
   --secondary-foreground: #1f1114;
@@ -23,7 +25,7 @@
   --destructive-foreground: #ffffff;
   --border: rgba(236, 72, 153, 0.15);
   --input: rgba(236, 72, 153, 0.15);
-  --ring: #ec4899;
+  --ring: #be185d;
   --radius: 0.625rem;
 }
 
