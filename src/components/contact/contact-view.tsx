@@ -6,6 +6,7 @@ import { useState } from "react";
 import { MapSection } from "@/components/contact/map-section";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { assetPath } from "@/lib/paths";
 import type { PortfolioData } from "@/types/portfolio";
 
 interface ContactViewProps {
@@ -143,7 +144,11 @@ export function ContactView({ data }: ContactViewProps) {
         >
           <p className="text-sm text-muted-foreground">
             Prefer a formal introduction?{" "}
-            <a href="/cv.pdf" download className="text-primary hover:underline">
+            <a
+              href={assetPath("/cv.pdf")}
+              download
+              className="text-primary hover:underline"
+            >
               Download my CV
             </a>
           </p>
