@@ -101,7 +101,7 @@
             "title": "Teaching Assistant (FUTURE@DEI)",
             "start": "2026-04",
             "end": "2026-08",
-            "is_current": true,
+            "is_current": false,
             "description": "Contracted as a Teaching Assistant (an administrative arrangement rather than a scholarship) while working on the FUTURE@DEI initiative. Responsible for identifying and organizing candidate student projects to be featured in the department's project \"museum\", a permanent showcase of notable CS work."
           }
         ]
@@ -133,8 +133,8 @@
           {
             "title": "Full-Stack Developer & Team Leader",
             "start": "2024-05",
-            "end": null,
-            "is_current": true,
+            "end": "2026-07",
+            "is_current": false,
             "highlights": [
               "Part of the team that developed the official web app for over 1400 users.",
               "Designed and implemented the venue map interface using Figma and Next.js.",
