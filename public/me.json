@@ -1,6 +1,6 @@
 {
   "meta": {
-    "last_updated": "2026-07-06",
+    "last_updated": "2026-11-15",
     "author": "Francisca Almeida",
     "language": "en"
   },
@@ -15,7 +15,7 @@
       "location": "Lisbon, Portugal"
     },
     "links": {
-      "website": "https://francisca105.github.io/portfolio/",
+      "website": "https://falmeida.dev",
       "github": "https://github.com/Francisca105/",
       "linkedin": "https://www.linkedin.com/in/francisca-105-almeida/"
     }
@@ -32,17 +32,17 @@
     "star_highlights": [
       {
         "id": "sinfo_2024",
-        "title": "High-Traffic Conference App",
-        "situation": "Needed a reliable platform for Portugal's largest free tech conference.",
-        "action": "Led the dev team to maintain the official web app using Next.js, and integrated Grafana for attendee analytics.",
-        "result": "Successfully served over 1400 users with zero downtime."
+        "title": "Conference Platform for 1,400+ Attendees",
+        "situation": "SINFO needed a reliable web app and website for Portugal's largest free tech conference.",
+        "action": "Led the dev team maintaining the Next.js web app, then rebuilt the website with referral attribution feeding Grafana dashboards.",
+        "result": "1,400+ attendees served during the conference; the rebuilt website drew 14.3k visits in the event month."
       },
       {
         "id": "microharvest_automation",
         "title": "Data Workflow Automation",
         "situation": "Internal data operations relied on manual, unscalable Excel-based workflows.",
-        "action": "Developed a custom dashboard using Docker, Next.js, and SQL to automate data entry and report generation.",
-        "result": "Significantly improved scalability and usability of internal data operations."
+        "action": "Built a Dockerised Next.js, FastAPI and SQL dashboard that automated data entry and report generation.",
+        "result": "Manual Excel data entry eliminated for the operations team; reports generated automatically instead of by hand."
       }
     ]
   },
@@ -58,14 +58,14 @@
             "start": "2026-05",
             "end": null,
             "is_current": true,
-            "description": "Developer on the Odoo migrations team, focused primarily on testing with additional production support across the full migration lifecycle.",
+            "description": "Developer on the Odoo ERP migrations team: go-lives and pre-production environments for client migrations, module upgrades and validation, and AI-agent workflows that automate test planning, execution and reporting.",
             "highlights": [
               "Executed go-lives for Odoo migration projects.",
+              "Automated test planning, execution and reporting workflows with AI agents.",
               "Set up pre-production environments for migration testing.",
               "Updated and validated Odoo modules across migrated instances.",
-              "Performed testing and bug fixing throughout the migration process.",
-              "Provided production support alongside migration duties.",
-              "Automating test planning, execution, and reporting workflows using AI agents."
+              "Tested and fixed bugs throughout the migration process.",
+              "Provided production support alongside migration duties."
             ],
             "proof_of_competence": {
               "stack": ["Python", "Odoo", "PostgreSQL", "XML"]
@@ -83,7 +83,7 @@
             "start": "2024-08",
             "end": "2024-11",
             "is_current": false,
-            "description": "Automated Excel-based workflows using a custom dashboard built with Docker, Next.js, and SQL. Improved scalability and usability of internal data operations.",
+            "description": "Replaced the operations team's Excel-based data entry with a Dockerised Next.js, FastAPI and SQL dashboard with automated report generation.",
             "proof_of_competence": {
               "stack": ["Docker", "Next.js", "SQL", "FastAPI"]
             }
@@ -325,7 +325,7 @@
       "context": "Community / Open Source",
       "type": "Pull Request",
       "date": "2025-05",
-      "description": "Contributed to Inbox Zero by improving UI consistency and addressing accessibility concerns in the task management interface.",
+      "description": "Fixed a UX bug where the inbox-zero celebration showed on non-inbox tabs. The first version added a prop to the Celebration component; after maintainer feedback, shipped a simpler message-only solution.",
       "proof_of_competence": {
         "status": "Merged"
       },
