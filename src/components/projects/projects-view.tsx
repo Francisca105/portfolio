@@ -14,6 +14,7 @@ import { SkillIcon } from "@/components/skill-icon";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { formatMonth } from "@/lib/format-date";
 import type { PortfolioData, Project } from "@/types/portfolio";
 
 interface ProjectsViewProps {
@@ -22,15 +23,6 @@ interface ProjectsViewProps {
 
 export function ProjectsView({ data }: ProjectsViewProps) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-
-  const formatDate = (dateStr: string | null) => {
-    if (!dateStr) return "Present";
-    const date = new Date(dateStr);
-    return date.toLocaleDateString("en-US", {
-      month: "short",
-      year: "numeric",
-    });
-  };
 
   // Find matching skill icons for technologies
   const getSkillIcon = (techName: string) => {
@@ -110,8 +102,10 @@ export function ProjectsView({ data }: ProjectsViewProps) {
                       </div>
                       <div className="flex items-center gap-2 text-sm text-muted-foreground shrink-0">
                         <Calendar className="h-4 w-4" />
-                        {formatDate(project.start)} -{" "}
-                        {project.is_current ? "Present" : formatDate(project.end)}
+                        {formatMonth(project.start)} -{" "}
+                        {project.is_current
+                          ? "Present"
+                          : formatMonth(project.end)}
                       </div>
                     </div>
                   </CardHeader>
@@ -227,7 +221,7 @@ export function ProjectsView({ data }: ProjectsViewProps) {
                         <div className="flex items-center gap-4 text-sm text-muted-foreground">
                           <span className="flex items-center gap-1">
                             <Calendar className="h-4 w-4" />
-                            {formatDate(contribution.date)}
+                            {formatMonth(contribution.date)}
                           </span>
                           <Badge variant="outline" className="text-xs">
                             {contribution.type}
@@ -265,7 +259,6 @@ export function ProjectsView({ data }: ProjectsViewProps) {
         project={selectedProject}
         onClose={() => setSelectedProject(null)}
         getSkillIcon={getSkillIcon}
-        formatDate={formatDate}
       />
     </div>
   );

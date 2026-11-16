@@ -11,20 +11,19 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
+import { formatMonth } from "@/lib/format-date";
 import type { Icons, Project } from "@/types/portfolio";
 
 interface ProjectDialogProps {
   project: Project | null;
   onClose: () => void;
   getSkillIcon: (techName: string) => Icons | null | undefined;
-  formatDate: (dateStr: string | null) => string;
 }
 
 export function ProjectDialog({
   project,
   onClose,
   getSkillIcon,
-  formatDate,
 }: ProjectDialogProps) {
   const metrics = project?.proof_of_competence?.metrics;
   const metricEntries = [
@@ -56,8 +55,8 @@ export function ProjectDialog({
                   </span>
                   <span className="flex items-center gap-1.5">
                     <Calendar className="h-4 w-4" />
-                    {formatDate(project.start)} -{" "}
-                    {project.is_current ? "Present" : formatDate(project.end)}
+                    {formatMonth(project.start)} -{" "}
+                    {project.is_current ? "Present" : formatMonth(project.end)}
                   </span>
                 </div>
               </DialogDescription>

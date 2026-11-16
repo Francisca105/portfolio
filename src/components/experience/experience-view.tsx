@@ -5,6 +5,7 @@ import { Briefcase, Calendar, MapPin } from "lucide-react";
 import { useRef } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { formatMonth } from "@/lib/format-date";
 import type { PortfolioData } from "@/types/portfolio";
 
 interface ExperienceViewProps {
@@ -21,15 +22,6 @@ export function ExperienceView({ data }: ExperienceViewProps) {
     stiffness: 100,
     damping: 30,
   });
-
-  const formatDate = (dateStr: string | null) => {
-    if (!dateStr) return "Present";
-    const date = new Date(dateStr);
-    return date.toLocaleDateString("en-US", {
-      month: "short",
-      year: "numeric",
-    });
-  };
 
   return (
     <div className="min-h-screen py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
@@ -128,7 +120,7 @@ export function ExperienceView({ data }: ExperienceViewProps) {
                         </div>
                         <div className="flex items-center gap-2 text-sm text-muted-foreground">
                           <Calendar className="h-4 w-4" />
-                          {formatDate(role.start)} - {formatDate(role.end)}
+                          {formatMonth(role.start)} - {formatMonth(role.end)}
                         </div>
                       </div>
 

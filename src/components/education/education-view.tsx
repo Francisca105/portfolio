@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { formatMonth } from "@/lib/format-date";
 import type { PortfolioData } from "@/types/portfolio";
 
 interface EducationViewProps {
@@ -19,15 +20,6 @@ interface EducationViewProps {
 }
 
 export function EducationView({ data }: EducationViewProps) {
-  const formatDate = (dateStr: string | null) => {
-    if (!dateStr) return "Present";
-    const date = new Date(dateStr);
-    return date.toLocaleDateString("en-US", {
-      month: "short",
-      year: "numeric",
-    });
-  };
-
   return (
     <div className="min-h-screen py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
@@ -91,7 +83,7 @@ export function EducationView({ data }: EducationViewProps) {
                         </div>
                         <div className="flex items-center gap-2 sm:flex-row-reverse">
                           <Calendar className="h-4 w-4" />
-                          {formatDate(edu.start)} - {formatDate(edu.end)}
+                          {formatMonth(edu.start)} - {formatMonth(edu.end)}
                           {edu.is_current && (
                             <Badge className="bg-primary/20 text-primary border-0 ml-2">
                               Current
@@ -123,39 +115,40 @@ export function EducationView({ data }: EducationViewProps) {
                     )}
 
                     {/* Leadership Roles */}
-                    {edu.leadership_roles && edu.leadership_roles.length > 0 && (
-                      <div className="pt-4 border-t border-border/50">
-                        <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
-                          <Award className="h-4 w-4 text-primary" />
-                          Leadership Roles
-                        </h4>
-                        <div className="space-y-3">
-                          {edu.leadership_roles.map((role) => (
-                            <div
-                              key={`${role.title}-${role.period}`}
-                              className="bg-secondary/30 rounded-lg p-3"
-                            >
-                              <div className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:justify-between">
-                                <span className="font-medium text-foreground">
-                                  {role.title}
-                                </span>
-                                <span className="text-xs text-muted-foreground">
-                                  {role.period}
-                                </span>
+                    {edu.leadership_roles &&
+                      edu.leadership_roles.length > 0 && (
+                        <div className="pt-4 border-t border-border/50">
+                          <h4 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
+                            <Award className="h-4 w-4 text-primary" />
+                            Leadership Roles
+                          </h4>
+                          <div className="space-y-3">
+                            {edu.leadership_roles.map((role) => (
+                              <div
+                                key={`${role.title}-${role.period}`}
+                                className="bg-secondary/30 rounded-lg p-3"
+                              >
+                                <div className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:justify-between">
+                                  <span className="font-medium text-foreground">
+                                    {role.title}
+                                  </span>
+                                  <span className="text-xs text-muted-foreground">
+                                    {role.period}
+                                  </span>
+                                </div>
+                                <p className="text-sm text-muted-foreground mt-1">
+                                  {role.description}
+                                </p>
+                                {role.highlight && (
+                                  <Badge className="mt-2 bg-primary text-primary-foreground">
+                                    {role.highlight}
+                                  </Badge>
+                                )}
                               </div>
-                              <p className="text-sm text-muted-foreground mt-1">
-                                {role.description}
-                              </p>
-                              {role.highlight && (
-                                <Badge className="mt-2 bg-primary text-primary-foreground">
-                                  {role.highlight}
-                                </Badge>
-                              )}
-                            </div>
-                          ))}
+                            ))}
+                          </div>
                         </div>
-                      </div>
-                    )}
+                      )}
                   </CardContent>
                 </Card>
               </motion.div>
@@ -215,7 +208,7 @@ export function EducationView({ data }: EducationViewProps) {
                         </div>
                         <div className="flex items-center gap-2 text-sm text-muted-foreground">
                           <Calendar className="h-4 w-4" />
-                          {formatDate(r.start)} - {formatDate(r.end)}
+                          {formatMonth(r.start)} - {formatMonth(r.end)}
                         </div>
                         {r.description && (
                           <p className="text-sm text-muted-foreground">
@@ -319,7 +312,7 @@ export function EducationView({ data }: EducationViewProps) {
                           </div>
                           <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
                             <Calendar className="h-4 w-4" />
-                            {formatDate(role.start)} - {formatDate(role.end)}
+                            {formatMonth(role.start)} - {formatMonth(role.end)}
                           </div>
                           {role.highlights && (
                             <ul className="space-y-1">
