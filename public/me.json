@@ -270,6 +270,28 @@
         "src": "/projects/sinfo.jpg",
         "alt": "Homepage of the rebuilt SINFO website"
       },
+      "gallery": [
+        {
+          "src": "/projects/sinfo-schedule.jpg",
+          "alt": "Conference schedule with day navigation and session cards"
+        },
+        {
+          "src": "/projects/sinfo-speakers.jpg",
+          "alt": "Speakers page with a filter by day"
+        },
+        {
+          "src": "/projects/sinfo-sponsors.jpg",
+          "alt": "Sponsors page grouped by tier"
+        },
+        {
+          "src": "/projects/sinfo-partners.jpg",
+          "alt": "Media partners and supporters page"
+        },
+        {
+          "src": "/projects/sinfo-team.jpg",
+          "alt": "Team page with member cards and roles"
+        }
+      ],
       "proof_of_competence": {
         "metrics": {
           "badge": "14.3k+ visits during the event month",

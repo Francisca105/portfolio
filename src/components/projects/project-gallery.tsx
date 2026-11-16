@@ -34,7 +34,14 @@ export function ProjectGallery({ images }: ProjectGalleryProps) {
       </div>
 
       {images.length > 1 && (
-        <div className="flex gap-2">
+        // One column per screenshot, each at most 6rem wide, so the row
+        // shrinks to fit a phone instead of overflowing the dialog.
+        <div
+          className="grid gap-2"
+          style={{
+            gridTemplateColumns: `repeat(${images.length}, minmax(0, 6rem))`,
+          }}
+        >
           {images.map((image, index) => (
             <button
               key={image.src}
@@ -43,7 +50,7 @@ export function ProjectGallery({ images }: ProjectGalleryProps) {
               aria-label={`Show screenshot ${index + 1} of ${images.length}: ${image.alt}`}
               aria-pressed={index === selected}
               className={cn(
-                "relative aspect-video w-20 sm:w-24 overflow-hidden rounded-md border transition-opacity",
+                "relative aspect-video w-full overflow-hidden rounded-md border transition-opacity",
                 index === selected
                   ? "border-primary"
                   : "border-border/50 opacity-60 hover:opacity-100",
