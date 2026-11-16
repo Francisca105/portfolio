@@ -3,8 +3,9 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Check, ChevronDown, Copy } from "lucide-react";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { Fragment, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import type { Basics, Narratives } from "@/types/portfolio";
 
 interface HeroSectionProps {
@@ -35,6 +36,11 @@ const edgeWords = "Full-stack developer driven by technical challenges."
 
 export function HeroSection({ basics, narratives }: HeroSectionProps) {
   const [copied, setCopied] = useState(false);
+  const headingWords = [
+    { text: "I'm", primary: false },
+    { text: `${basics.name.first},`, primary: true },
+    ...edgeWords,
+  ];
 
   // Parallax: as the hero scrolls out, the content drifts down and fades
   // while the background blobs move at different speeds for depth.
@@ -106,27 +112,28 @@ export function HeroSection({ basics, narratives }: HeroSectionProps) {
           </span>
         </motion.div>
 
+        {/* Each word animates on its own, but the plain " " text node between
+            the spans keeps real spaces in the DOM, so screen readers, search
+            engines and copy-paste get a normal sentence. */}
         <motion.h1
           variants={headingContainer}
           initial="hidden"
           animate="visible"
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground text-balance"
         >
-          {[
-            { text: "I'm", primary: false },
-            { text: `${basics.name.first},`, primary: true },
-            ...edgeWords,
-          ].map((word, index) => (
-            <motion.span
+          {headingWords.map((word, index) => (
+            <Fragment
               // biome-ignore lint/suspicious/noArrayIndexKey: static word list
               key={index}
-              variants={headingWord}
-              className={`inline-block mr-[0.25em] ${
-                word.primary ? "text-primary" : ""
-              }`}
             >
-              {word.text}
-            </motion.span>
+              <motion.span
+                variants={headingWord}
+                className={cn("inline-block", word.primary && "text-primary")}
+              >
+                {word.text}
+              </motion.span>
+              {index < headingWords.length - 1 ? " " : null}
+            </Fragment>
           ))}
         </motion.h1>
 
