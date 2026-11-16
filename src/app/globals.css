@@ -19,8 +19,11 @@
   --secondary-foreground: #1f1114;
   --muted: #fff0f5;
   --muted-foreground: #6b5b62;
-  --accent: #ec4899;
-  --accent-foreground: #ffffff;
+  /* accent is the hover surface of outline/ghost buttons and menu items,
+     not the brand colour: a brand-coloured accent made hovered text
+     (accent-foreground) vanish against the faint hover background. */
+  --accent: #fce7f3;
+  --accent-foreground: #1f1114;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
   --border: rgba(236, 72, 153, 0.15);
@@ -43,8 +46,8 @@
   --secondary-foreground: #f5f3f7;
   --muted: #150d1f;
   --muted-foreground: #a8a0af;
-  --accent: #a855f7;
-  --accent-foreground: #050208;
+  --accent: #1e1330;
+  --accent-foreground: #f5f3f7;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
   --border: rgba(168, 85, 247, 0.15);
