@@ -246,56 +246,76 @@
   ],
   "projects": [
     {
-      "title": "NEIIST - Store",
-      "context": "Professional / Community",
-      "role": "Project Lead & Fullstack Developer",
-      "start": "2024-11",
-      "end": "2025-02",
-      "description": "Developed an online merchandise store for NEIIST to support the student community. Designed for future expansion to include stickers and other products.",
-      "technologies": [
-        "React",
-        "Create-React-App",
-        "PostgreSQL",
-        "JavaScript",
-        "Exceljs"
-      ],
-      "proof_of_competence": {
-        "metrics": {
-          "badge": "220+ orders processed"
-        },
-        "technical": "Automated order export system using Exceljs"
-      },
-      "links": {
-        "github": "https://github.com/Francisca105/neiist-website/tree/feature/new-shop"
-      }
-    },
-    {
-      "title": "SINFO - Official Website Rebuild",
+      "id": "sinfo-rebuild",
+      "title": "SINFO Website Rebuild",
       "context": "Community / Technical Leadership",
       "role": "Project Lead & Fullstack Developer",
       "start": "2025-10",
       "end": "2026-04",
-      "is_current": true,
-      "description": "Led the complete architectural rebuild and modernization of the official SINFO website. Focused on improving developer experience, system maintainability, and implementing a robust digital analytics infrastructure.",
+      "is_current": false,
+      "description": "Next.js platform for Portugal's largest free tech conference, rebuilt from the ground up with a modular component system and campaign-attribution analytics.",
+      "problem": "The legacy site was hard to change and nobody could tell which campaigns actually brought attendees.",
+      "solution": "Rebuilt the site on Next.js App Router, TypeScript and Tailwind as a modular component system for schedule, speakers and sponsors. Dockerised staging and production. Added referral attribution through ref query params feeding Grafana dashboards. Led a team of junior developers: scope, timelines and mentoring.",
+      "result": "Served SINFO 33 in April 2026: 14.3k visits in the event month, 6,000+ visits and 10,000+ page views per month since. 35+ commits merged upstream.",
       "technologies": [
         "Next.js",
         "React",
         "TypeScript",
         "Tailwind CSS",
+        "Docker",
         "Figma",
         "Grafana"
       ],
+      "image": {
+        "src": "/projects/sinfo.jpg",
+        "alt": "Homepage of the rebuilt SINFO website"
+      },
       "proof_of_competence": {
         "metrics": {
           "badge": "14.3k+ visits during the event month",
           "engagement": "6,000+ visits and 10,000+ page views per month",
-          "analytics_impact": "Engineered a custom referral tracking system (ref query params) integrated with Grafana"
-        },
-        "technical": "Architected a modular frontend using Next.js and implemented real-time marketing attribution dashboards to monitor traffic sources and campaign effectiveness."
+          "analytics_impact": "Referral tracking via ref params feeding Grafana"
+        }
       },
       "links": {
         "github": "https://github.com/Francisca105/sinfo-website",
-        "live": "http://sinfo.falmeida.dev/"
+        "live": "https://sinfo.falmeida.dev/",
+        "commits": "https://github.com/sinfo/sinfo-website/commits?author=Francisca105"
+      }
+    },
+    {
+      "id": "neiist-store",
+      "title": "NEIIST Merch Store",
+      "context": "Professional / Community",
+      "role": "Project Lead & Fullstack Developer",
+      "start": "2024-11",
+      "end": "2025-02",
+      "is_current": false,
+      "description": "End-to-end e-commerce for a student association: catalogue, cart, checkout and an admin area with order management and Excel export.",
+      "problem": "Merch orders were collected through forms and reconciled by hand in spreadsheets.",
+      "solution": "Built the catalogue, cart, checkout and an admin area with order management and Excel export (ExcelJS) on the existing React, Express and PostgreSQL codebase. Shipped as 8 merged pull requests, including the mobile cart fixes.",
+      "result": "220+ orders processed through the store, with order exports replacing manual spreadsheet reconciliation.",
+      "technologies": [
+        "React",
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "JavaScript",
+        "ExcelJS"
+      ],
+      "image": {
+        "src": "/projects/neiist-store.jpg",
+        "alt": "NEIIST merch store page"
+      },
+      "proof_of_competence": {
+        "metrics": {
+          "badge": "220+ orders processed"
+        }
+      },
+      "links": {
+        "github": "https://github.com/Francisca105/neiist-website/tree/feature/new-shop",
+        "live": "https://neiist.tecnico.ulisboa.pt/pt/shop",
+        "commits": "https://github.com/neiist-dev/neiist-website/commits?author=Francisca105"
       }
     }
   ],

@@ -1,6 +1,13 @@
 "use client";
 
-import { Calendar, ExternalLink, Github, User } from "lucide-react";
+import {
+  Calendar,
+  ExternalLink,
+  GitCommitHorizontal,
+  Github,
+  User,
+} from "lucide-react";
+import Image from "next/image";
 import { SkillIcon } from "@/components/skill-icon";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -12,6 +19,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { formatMonth } from "@/lib/format-date";
+import { assetPath } from "@/lib/paths";
 import type { Icons, Project } from "@/types/portfolio";
 
 interface ProjectDialogProps {
@@ -32,11 +40,35 @@ export function ProjectDialog({
     metrics?.analytics_impact,
   ].filter((m): m is string => !!m);
 
+  // Problem -> Solution -> Result, shown only for the parts that exist.
+  const story = [
+    { label: "Problem", text: project?.problem, emphasis: false },
+    { label: "Solution", text: project?.solution, emphasis: false },
+    { label: "Result", text: project?.result, emphasis: true },
+  ].flatMap((step) => (step.text ? [{ ...step, text: step.text }] : []));
+
   return (
     <Dialog open={!!project} onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="max-w-[calc(100%-2rem)] sm:max-w-2xl max-h-[85vh] overflow-y-auto">
         {project && (
           <>
+            {project.image && (
+              // The wrapper keeps the aspect-ratio box from being a direct
+              // grid item of the dialog: a stretched grid item ignores its
+              // aspect ratio, collapses its row and overlaps the text below.
+              <div>
+                <div className="relative aspect-video overflow-hidden rounded-lg border border-border/50 bg-secondary/30">
+                  <Image
+                    src={assetPath(project.image.src)}
+                    alt={project.image.alt}
+                    fill
+                    sizes="(min-width: 640px) 42rem, 100vw"
+                    className="object-cover object-top"
+                  />
+                </div>
+              </div>
+            )}
+
             <DialogHeader>
               <Badge
                 variant="outline"
@@ -65,6 +97,27 @@ export function ProjectDialog({
             <p className="text-sm text-muted-foreground leading-relaxed">
               {project.description}
             </p>
+
+            {story.length > 0 && (
+              <div className="space-y-4 rounded-lg border border-border/50 bg-secondary/30 p-4">
+                {story.map((step) => (
+                  <div key={step.label}>
+                    <h4 className="text-xs font-medium uppercase tracking-wider text-primary mb-1">
+                      {step.label}
+                    </h4>
+                    <p
+                      className={
+                        step.emphasis
+                          ? "text-sm font-medium text-foreground"
+                          : "text-sm text-muted-foreground"
+                      }
+                    >
+                      {step.text}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            )}
 
             {project.proof_of_competence?.technical && (
               <div className="rounded-lg border border-border/50 bg-secondary/30 p-4">
@@ -101,27 +154,28 @@ export function ProjectDialog({
                   Technologies
                 </h4>
                 <div className="flex flex-wrap gap-2">
-                  {project.technologies.map((tech) => (
-                    <div
-                      key={tech}
-                      className="flex items-center gap-1.5 px-2 py-1 bg-secondary/50 rounded-md text-xs"
-                    >
-                      {getSkillIcon(tech) && (
-                        <SkillIcon
-                          icons={getSkillIcon(tech) ?? null}
-                          name={tech}
-                          size={16}
-                        />
-                      )}
-                      <span className="text-foreground">{tech}</span>
-                    </div>
-                  ))}
+                  {project.technologies.map((tech) => {
+                    const icons = getSkillIcon(tech);
+                    return (
+                      <div
+                        key={tech}
+                        className="flex items-center gap-1.5 px-2 py-1 bg-secondary/50 rounded-md text-xs"
+                      >
+                        {icons && (
+                          <SkillIcon icons={icons} name={tech} size={16} />
+                        )}
+                        <span className="text-foreground">{tech}</span>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             )}
 
-            {(project.links?.github || project.links?.live) && (
-              <div className="flex gap-2 pt-2">
+            {(project.links?.github ||
+              project.links?.commits ||
+              project.links?.live) && (
+              <div className="flex flex-wrap gap-2 pt-2">
                 {project.links?.github && (
                   <Button asChild variant="outline" size="sm">
                     <a
@@ -131,6 +185,18 @@ export function ProjectDialog({
                     >
                       <Github className="h-4 w-4 mr-2" />
                       View Code
+                    </a>
+                  </Button>
+                )}
+                {project.links?.commits && (
+                  <Button asChild variant="outline" size="sm">
+                    <a
+                      href={project.links.commits}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <GitCommitHorizontal className="h-4 w-4 mr-2" />
+                      My commits
                     </a>
                   </Button>
                 )}

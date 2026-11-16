@@ -5,21 +5,27 @@ import {
   Calendar,
   Check,
   ExternalLink,
+  GitCommitHorizontal,
   Github,
   GitPullRequest,
 } from "lucide-react";
-import { useState } from "react";
+import Image from "next/image";
+import { type MouseEvent, useState } from "react";
 import { ProjectDialog } from "@/components/projects/project-dialog";
 import { SkillIcon } from "@/components/skill-icon";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { formatMonth } from "@/lib/format-date";
+import { assetPath } from "@/lib/paths";
 import type { PortfolioData, Project } from "@/types/portfolio";
 
 interface ProjectsViewProps {
   data: PortfolioData;
 }
+
+// A click on a link inside the card must not also open the dialog.
+const stopPropagation = (event: MouseEvent) => event.stopPropagation();
 
 export function ProjectsView({ data }: ProjectsViewProps) {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -65,6 +71,10 @@ export function ProjectsView({ data }: ProjectsViewProps) {
             {data.projects.map((project, index) => (
               <motion.div
                 key={project.title}
+                // Anchor target for links such as /projects#sinfo-rebuild;
+                // scroll-mt keeps it clear of the fixed navbar.
+                id={project.id}
+                className="scroll-mt-24"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -82,8 +92,21 @@ export function ProjectsView({ data }: ProjectsViewProps) {
                       setSelectedProject(project);
                     }
                   }}
-                  className="h-full cursor-pointer border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10 active:scale-[0.98]"
+                  className="h-full overflow-hidden cursor-pointer border-border/50 bg-card/50 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-primary/10 active:scale-[0.98]"
                 >
+                  {project.image && (
+                    // -mt-6 cancels the card's top padding so the screenshot
+                    // sits flush with the rounded top edge.
+                    <div className="relative -mt-6 aspect-video border-b border-border/50 bg-secondary/30">
+                      <Image
+                        src={assetPath(project.image.src)}
+                        alt={project.image.alt}
+                        fill
+                        sizes="(min-width: 768px) 50vw, 100vw"
+                        className="object-cover object-top"
+                      />
+                    </div>
+                  )}
                   <CardHeader>
                     <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                       <div>
@@ -133,7 +156,7 @@ export function ProjectsView({ data }: ProjectsViewProps) {
                     </div>
 
                     {/* Metrics */}
-                    {project.proof_of_competence?.metrics && (
+                    {project.proof_of_competence?.metrics?.badge && (
                       <div className="pt-3 border-t border-border/50">
                         <Badge className="bg-primary text-primary-foreground">
                           {project.proof_of_competence.metrics.badge}
@@ -143,17 +166,30 @@ export function ProjectsView({ data }: ProjectsViewProps) {
 
                     {/* Links */}
                     {project.links && (
-                      <div className="flex gap-2 pt-2">
+                      <div className="flex flex-wrap gap-2 pt-2">
                         {project.links.github && (
                           <Button asChild variant="outline" size="sm">
                             <a
                               href={project.links.github}
                               target="_blank"
                               rel="noopener noreferrer"
-                              onClick={(e) => e.stopPropagation()}
+                              onClick={stopPropagation}
                             >
                               <Github className="h-4 w-4 mr-2" />
                               Code
+                            </a>
+                          </Button>
+                        )}
+                        {project.links.commits && (
+                          <Button asChild variant="outline" size="sm">
+                            <a
+                              href={project.links.commits}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={stopPropagation}
+                            >
+                              <GitCommitHorizontal className="h-4 w-4 mr-2" />
+                              My commits
                             </a>
                           </Button>
                         )}
@@ -163,7 +199,7 @@ export function ProjectsView({ data }: ProjectsViewProps) {
                               href={project.links.live}
                               target="_blank"
                               rel="noopener noreferrer"
-                              onClick={(e) => e.stopPropagation()}
+                              onClick={stopPropagation}
                             >
                               <ExternalLink className="h-4 w-4 mr-2" />
                               Live

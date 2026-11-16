@@ -49,6 +49,18 @@ const linksSchema = z
   .object({
     github: z.string().optional(),
     live: z.string().optional(),
+    // Commit history filtered by author, for work merged into an
+    // organisation's repository rather than a personal one.
+    commits: z.string().optional(),
+  })
+  .optional()
+  .catch(undefined);
+
+const imageSchema = z
+  .object({
+    // Path under /public, e.g. "/projects/sinfo.jpg".
+    src: safeString,
+    alt: safeString,
   })
   .optional()
   .catch(undefined);
@@ -186,14 +198,22 @@ const educationSchema = z.object({
 });
 
 const projectSchema = z.object({
+  // DOM id of the project card, so other pages can link to /projects#<id>.
+  id: optionalString,
   title: safeString,
   context: safeString,
   role: safeString,
   start: dateString,
   end: dateString,
   is_current: z.boolean().catch(false),
+  // One-line summary shown on the card. The three fields below tell the
+  // full story in the project dialog.
   description: safeString,
+  problem: optionalString,
+  solution: optionalString,
+  result: optionalString,
   technologies: safeStringArray,
+  image: imageSchema,
   proof_of_competence: proofOfCompetenceSchema,
   links: linksSchema,
 });
@@ -250,6 +270,8 @@ export type StarHighlight = z.infer<typeof starHighlightSchema>;
 export type ProofOfCompetence = NonNullable<
   z.infer<typeof proofOfCompetenceSchema>
 >;
+export type ProjectLinks = NonNullable<z.infer<typeof linksSchema>>;
+export type ProjectImage = NonNullable<z.infer<typeof imageSchema>>;
 export type Role = z.infer<typeof roleSchema>;
 export type IndustryExperience = z.infer<typeof industryExperienceSchema>;
 export type UniversityRole = z.infer<typeof universityRoleSchema>;
