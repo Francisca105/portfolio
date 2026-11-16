@@ -2,7 +2,7 @@
 
 import { ErrorState } from "@/components/error-state";
 
-export default function Error({
+export default function ErrorPage({
   reset,
 }: {
   error: Error & { digest?: string };
