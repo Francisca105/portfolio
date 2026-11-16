@@ -7,6 +7,7 @@ import { z } from "zod";
  */
 
 const safeString = z.string().catch("");
+const optionalString = z.string().optional().catch(undefined);
 const dateString = z.string().nullable().catch(null);
 const safeStringArray = z.array(z.string().catch("")).catch([]);
 
@@ -77,6 +78,9 @@ const basicsSchema = z
       last: safeString,
     }),
     label: safeString,
+    // Optional one-liner shown under the hero text, e.g.
+    // "Open to full-time Software Engineer roles from March 2027".
+    availability: optionalString,
     contact: z.object({
       email: safeString,
       location: safeString,
@@ -90,6 +94,7 @@ const basicsSchema = z
   .catch({
     name: { first: "", last: "" },
     label: "",
+    availability: undefined,
     contact: { email: "", location: "" },
     links: { website: "", github: "", linkedin: "" },
   });
@@ -102,13 +107,34 @@ const starHighlightSchema = z.object({
   result: safeString,
 });
 
+const ctaSchema = z
+  .object({
+    label: safeString,
+    href: safeString,
+  })
+  .optional()
+  .catch(undefined);
+
 const narrativesSchema = z
   .object({
+    // Hero heading. `headline_emphasis` is a phrase from it rendered in the
+    // accent colour.
+    headline: safeString,
+    headline_emphasis: optionalString,
     short: safeString,
     detailed: safeString,
+    // Primary hero button; falls back to "View Projects" -> /projects.
+    cta: ctaSchema,
     star_highlights: z.array(starHighlightSchema).catch([]),
   })
-  .catch({ short: "", detailed: "", star_highlights: [] });
+  .catch({
+    headline: "",
+    headline_emphasis: undefined,
+    short: "",
+    detailed: "",
+    cta: undefined,
+    star_highlights: [],
+  });
 
 const industryExperienceSchema = z.object({
   company: safeString,

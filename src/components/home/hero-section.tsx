@@ -1,10 +1,11 @@
 "use client";
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowRight, Check, ChevronDown, Copy } from "lucide-react";
+import { ArrowRight, ChevronDown, Download, Mail } from "lucide-react";
 import Link from "next/link";
-import { Fragment, useRef, useState } from "react";
+import { Fragment, useRef } from "react";
 import { Button } from "@/components/ui/button";
+import { assetPath } from "@/lib/paths";
 import { cn } from "@/lib/utils";
 import type { Basics, Narratives } from "@/types/portfolio";
 
@@ -30,17 +31,40 @@ const headingWord = {
   },
 };
 
-const edgeWords = "Full-stack developer driven by technical challenges."
-  .split(" ")
-  .map((text) => ({ text, primary: false }));
+const stripPunctuation = (word: string) => word.replace(/[.,!?;:]+$/, "");
+
+// Splits the headline into words and marks the ones covered by `emphasis`
+// (a phrase taken from the headline) so they render in the accent colour.
+function splitHeadline(headline: string, emphasis?: string) {
+  const words = headline.split(/\s+/).filter(Boolean);
+  const target = emphasis?.split(/\s+/).filter(Boolean) ?? [];
+  let start = -1;
+
+  if (target.length > 0) {
+    for (let i = 0; i + target.length <= words.length; i++) {
+      const matches = target.every(
+        (word, offset) =>
+          stripPunctuation(words[i + offset]) === stripPunctuation(word),
+      );
+      if (matches) {
+        start = i;
+        break;
+      }
+    }
+  }
+
+  return words.map((text, index) => ({
+    text,
+    primary: start >= 0 && index >= start && index < start + target.length,
+  }));
+}
 
 export function HeroSection({ basics, narratives }: HeroSectionProps) {
-  const [copied, setCopied] = useState(false);
-  const headingWords = [
-    { text: "I'm", primary: false },
-    { text: `${basics.name.first},`, primary: true },
-    ...edgeWords,
-  ];
+  const words = splitHeadline(
+    narratives.headline,
+    narratives.headline_emphasis,
+  );
+  const cta = narratives.cta ?? { label: "View Projects", href: "/projects" };
 
   // Parallax: as the hero scrolls out, the content drifts down and fades
   // while the background blobs move at different speeds for depth.
@@ -53,12 +77,6 @@ export function HeroSection({ basics, narratives }: HeroSectionProps) {
   const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
   const blobOneY = useTransform(scrollYProgress, [0, 1], [0, -160]);
   const blobTwoY = useTransform(scrollYProgress, [0, 1], [0, 100]);
-
-  const copyEmail = async () => {
-    await navigator.clipboard.writeText(basics.contact.email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
 
   return (
     <section
@@ -121,9 +139,9 @@ export function HeroSection({ basics, narratives }: HeroSectionProps) {
           animate="visible"
           className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground text-balance"
         >
-          {headingWords.map((word, index) => (
+          {words.map((word, index) => (
             <Fragment
-              // biome-ignore lint/suspicious/noArrayIndexKey: static word list
+              // biome-ignore lint/suspicious/noArrayIndexKey: words can repeat and the list is static
               key={index}
             >
               <motion.span
@@ -132,7 +150,7 @@ export function HeroSection({ basics, narratives }: HeroSectionProps) {
               >
                 {word.text}
               </motion.span>
-              {index < headingWords.length - 1 ? " " : null}
+              {index < words.length - 1 ? " " : null}
             </Fragment>
           ))}
         </motion.h1>
@@ -146,6 +164,23 @@ export function HeroSection({ basics, narratives }: HeroSectionProps) {
           {narratives.short}
         </motion.p>
 
+        {basics.availability && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.65 }}
+            className="mt-5 flex justify-center"
+          >
+            <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+              <span
+                aria-hidden="true"
+                className="h-2 w-2 rounded-full bg-primary"
+              />
+              {basics.availability}
+            </span>
+          </motion.div>
+        )}
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -153,29 +188,24 @@ export function HeroSection({ basics, narratives }: HeroSectionProps) {
           className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <Button asChild size="lg" className="gap-2 group">
-            <Link href="/projects">
-              View Projects
+            <Link href={cta.href}>
+              {cta.label}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
 
-          <Button
-            variant="outline"
-            size="lg"
-            onClick={copyEmail}
-            className="gap-2"
-          >
-            {copied ? (
-              <>
-                <Check className="h-4 w-4" />
-                Copied!
-              </>
-            ) : (
-              <>
-                <Copy className="h-4 w-4" />
-                Copy Email
-              </>
-            )}
+          <Button asChild variant="outline" size="lg" className="gap-2">
+            <a href={assetPath("/cv.pdf")} download>
+              <Download className="h-4 w-4" />
+              Download CV
+            </a>
+          </Button>
+
+          <Button asChild variant="ghost" size="lg" className="gap-2">
+            <a href={`mailto:${basics.contact.email}`}>
+              <Mail className="h-4 w-4" />
+              Email me
+            </a>
           </Button>
         </motion.div>
 
