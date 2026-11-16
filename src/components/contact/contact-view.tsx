@@ -65,7 +65,7 @@ export function ContactView({ data }: ContactViewProps) {
                 <p className="text-sm text-muted-foreground mb-2">
                   Click to copy email
                 </p>
-                <h2 className="text-2xl sm:text-3xl font-bold text-foreground group-hover:text-primary transition-colors break-all">
+                <h2 className="text-lg sm:text-2xl md:text-3xl font-bold text-foreground group-hover:text-primary transition-colors break-words">
                   {data.basics.contact.email}
                 </h2>
                 <div className="mt-4 flex items-center justify-center gap-2 text-primary">
