@@ -75,16 +75,8 @@ const basicsSchema = z
     name: z.object({
       first: safeString,
       last: safeString,
-      full: safeString,
-      aka: safeString,
     }),
     label: safeString,
-    birth: z
-      .object({
-        date: safeString,
-        location: safeString,
-      })
-      .catch({ date: "", location: "" }),
     contact: z.object({
       email: safeString,
       location: safeString,
@@ -96,9 +88,8 @@ const basicsSchema = z
     }),
   })
   .catch({
-    name: { first: "", last: "", full: "", aka: "" },
+    name: { first: "", last: "" },
     label: "",
-    birth: { date: "", location: "" },
     contact: { email: "", location: "" },
     links: { website: "", github: "", linkedin: "" },
   });

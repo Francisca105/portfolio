@@ -7,15 +7,9 @@
   "basics": {
     "name": {
       "first": "Francisca",
-      "last": "Almeida",
-      "full": "Francisca Vicente de Almeida",
-      "aka": "Francisca.105"
+      "last": "Almeida"
     },
     "label": "Software Engineer & CS Master's Student",
-    "birth": {
-      "date": "2004-09-15",
-      "location": "Lisbon, Portugal"
-    },
     "contact": {
       "email": "francisca04almeida@outlook.com",
       "location": "Lisbon, Portugal"
